@@ -1,4 +1,8 @@
-cd && cd particlcore && echo "Enter a public address generated from your desktop/qt/copat wallet where you want to receive your anonymized coins:" && read wallet
+red='\e[0;31m'
+neutre='\e[0;m'
+
+
+cd && cd particlcore && echo -e "${red}Enter a public address generated from your desktop/qt/copat wallet where you want to receive your anonymized coins:${neutre}" && read wallet
 
 rewardaddress=$(cd && cd particlcore && ./particl-cli getnewaddress) 
 
