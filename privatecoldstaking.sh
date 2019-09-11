@@ -18,6 +18,8 @@ yes | ./partyman install
 
 ./partyman stakingnode init
 
+clear
+
 cd && cd particlcore && echo -e "${yel}Enter a public address generated from your Desktop/Qt/Copay wallet, this address will be the reception address for your anonymized rewards:${neutre}" && read wallet
 
 echo "$wallet" > wallet.txt 
