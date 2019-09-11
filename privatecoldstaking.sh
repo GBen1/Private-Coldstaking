@@ -52,6 +52,7 @@ echo ""
 echo -e "${gr}$extaddress ${neutre}"
 echo ""
 echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
+echo ""
 
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 
