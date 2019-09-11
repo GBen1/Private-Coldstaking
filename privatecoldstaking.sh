@@ -36,9 +36,9 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && random=$(echo $(( R
 
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && random=$(echo $(( RANDOM % (100 - 50 + 1 ) + 50 ))) && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet 0.4; sleep $random; done'" > script2.sh
 
-echo -e "${yel}Your coldstaking rewards are going to be anonymized on your coldstakingnode (from this address:${neutre} ${gr} $rewardaddress ${neutre} ${yel}), afterward they will be automatically sent back to you on this address:${neutre} ${gr} $wallet ${neutre}"
+echo -e "${yel}Your coldstaking rewards are going to be anonymized on your coldstakingnode (from this address:${neutre} ${gr} $rewardaddress${neutre}${yel}), afterward they will be automatically sent back to you on this address:${neutre}${gr} $wallet ${neutre}"
 echo ""
-echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract: ${neutre} ${gr} $extaddress ${neutre}"
+echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}${gr} $extaddress ${neutre}"
 echo ""
 
 nohup bash script1.sh & nohup bash script2.sh
