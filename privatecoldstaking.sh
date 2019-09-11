@@ -12,7 +12,7 @@ cd ~ && git clone https://github.com/dasource/partyman
 
 cd partyman/
 
-./partyman install
+yes | ./partyman install
 
 ./partyman restart now
 
