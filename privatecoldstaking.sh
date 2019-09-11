@@ -55,6 +55,7 @@ echo -e "${yel}This is your new coldstaking node public key, copy past it in you
 echo ""
 echo -e "${gr}$extaddress ${neutre}"
 echo ""
+echo ""
 echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
 echo ""
 
