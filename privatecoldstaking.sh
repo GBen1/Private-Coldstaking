@@ -4,9 +4,9 @@ gr='\e[1;32m'
 
 cd
 
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade <<< y
 
-sudo apt-get install python git unzip pv jq
+sudo apt-get install python git unzip pv jq <<< y
 
 cd ~ && git clone https://github.com/dasource/partyman
 
