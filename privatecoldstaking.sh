@@ -42,6 +42,9 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet
 
 clear
 
+echo -e "${gr}PARTICL PRIVATE COLDSTAKING ${neutre}"
+echo ""
+echo ""
 echo -e "${yel}Your coldstaking rewards are going to be anonymized on your coldstakingnode (from this address:${neutre}${gr} $rewardaddress${neutre}${yel}), afterward they will be automatically sent back to you on this address:${neutre}"
 echo ""
 echo -e "${gr}$wallet ${neutre}"
