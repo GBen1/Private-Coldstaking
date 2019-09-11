@@ -42,15 +42,14 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && random=$(echo $(( R
 
 clear
 
-echo ""
 echo -e "${yel}Your coldstaking rewards are going to be anonymized on your coldstakingnode (from this address:${neutre}${gr} $rewardaddress${neutre}${yel}), afterward they will be automatically sent back to you on this address:${neutre}"
 echo ""
-echo -e "${gr} $wallet ${neutre}"
+echo -e "${gr}$wallet ${neutre}"
 echo ""
 echo ""
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
 echo ""
-echo -e "${gr} $extaddress ${neutre}"
+echo -e "${gr}$extaddress ${neutre}"
 echo ""
 
 nohup bash script1.sh & nohup bash script2.sh
