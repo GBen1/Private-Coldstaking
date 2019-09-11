@@ -4,8 +4,6 @@ gr='\e[1;32m'
 
 cd
 
-rm -rf Private-Coldstaking/
-
 sudo apt-get update && sudo apt-get upgrade <<< y
 
 sudo apt-get install python git unzip pv jq <<< y
