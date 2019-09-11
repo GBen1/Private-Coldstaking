@@ -36,9 +36,9 @@ stealthaddressnode=$(./particl-cli getnewstealthaddress)
 
 echo "$stealthaddressnode" > stealthaddressnode.txt
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode 0.45; sleep $[$RANDOM]s; done' " > script1.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode 0.45; sleep $[$RANDOM+1]s; done' " > script1.sh
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet 0.4; sleep $[$RANDOM]s; done'" > script2.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet 0.4; sleep $[$RANDOM+1]s; done'" > script2.sh
 
 clear
 
