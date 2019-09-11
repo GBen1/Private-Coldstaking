@@ -47,11 +47,11 @@ echo ""
 echo -e "${gr}$wallet ${neutre}"
 echo ""
 echo ""
-echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
+echo -e "${yel}This is your new coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract (if you already have initialized a coldstaking smartcontract is optional):${neutre}"
 echo ""
 echo -e "${gr}$extaddress ${neutre}"
 echo ""
 
-nohup bash script1.sh & nohup bash script2.sh
+nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 
 
