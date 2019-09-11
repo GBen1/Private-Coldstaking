@@ -40,9 +40,9 @@ a=100
 b=50
 c=1
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && random=$(echo $(( RANDOM % (100 - 50 + 1 ) + 50 ))) && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode 0.45; sleep $random; done' " > script1.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode 0.45; sleep 10800; done' " > script1.sh
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && random=$(echo $(( RANDOM % (100 - 50 + 1 ) + 50 ))) && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet 0.4; sleep $random; done'" > script2.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet 0.4; sleep 10800; done'" > script2.sh
 
 clear
 
