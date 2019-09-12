@@ -62,9 +62,11 @@ csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 ratio1=0.00007
 ratio2=0.00006
 
+clear
+
 if ((csbal < 1 ));
 then
-       echo -e "${yel}Enter the number of coins that you want to coldstake on this node and press enter:${neutre}" && read csbal
+       echo -e "${yel}Enter the number of coins that you want to coldstake on this node:${neutre}" && read csbal
 fi
 
 
