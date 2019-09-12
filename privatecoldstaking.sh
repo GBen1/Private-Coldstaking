@@ -56,9 +56,15 @@ stealthaddressnode=$(./particl-cli getnewstealthaddress)
 
 echo "$stealthaddressnode" > stealthaddressnode.txt
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode 0.45; sleep $[$RANDOM+1]s; done' " > script1.sh
+csbal=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35- | rev | cut -c2- | rev)
+ratio1=0.00007
+ratio2=0.00006
+amount1=$(echo "$csbal" "*" "$ratio1" | bc -l)
+amount2=$(echo "$csbal" "*" "$ratio2" | bc -l)
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet 0.4; sleep $[$RANDOM+1]s; done'" > script2.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
+
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet $amount2; sleep $[$RANDOM+1]s; done'" > script2.sh
 
 clear
 
