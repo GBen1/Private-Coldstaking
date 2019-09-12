@@ -58,6 +58,7 @@ echo "$stealthaddressnode" > stealthaddressnode.txt
 
 csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
+csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
 ratio1=0.00007
 ratio2=0.00006
@@ -87,11 +88,15 @@ echo ""
 echo -e "${gr}$wallet ${neutre}"
 echo ""
 echo ""
-echo -e "${yel}This is your new coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract (if you already have initialized a coldstaking smartcontract this step is optional):${neutre}"
+if ((csbalfin < 1 ));
+then
+echo -e "${yel}This is your new coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
 echo ""
 echo -e "${gr}$extaddress ${neutre}"
 echo ""
 echo ""
+fi
+
 echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
 echo ""
 
