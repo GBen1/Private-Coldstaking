@@ -56,7 +56,7 @@ stealthaddressnode=$(./particl-cli getnewstealthaddress)
 
 echo "$stealthaddressnode" > stealthaddressnode.txt
 
-csbal=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35- | rev | cut -c2- | rev)
+csbal=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-48)
 ratio1=0.00007
 ratio2=0.00006
 amount1=$(echo "$csbal" "*" "$ratio1" | bc -l)
