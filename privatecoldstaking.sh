@@ -59,8 +59,8 @@ echo "$stealthaddressnode" > stealthaddressnode.txt
 csbal=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-48)
 ratio1=0.00007
 ratio2=0.00006
-amount1=$(echo "$csbal" "*" "$ratio1" | bc -l)
-amount2=$(echo "$csbal" "*" "$ratio2" | bc -l)
+amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" | bc -l)")
+amount2=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio2" | bc -l)")
 
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
 
