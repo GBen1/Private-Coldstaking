@@ -56,13 +56,13 @@ stealthaddressnode=$(./particl-cli getnewstealthaddress)
 
 echo "$stealthaddressnode" > stealthaddressnode.txt
 
-csbal=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
-csbal=$(printf '%.3f\n' "$(cd && cd particlcore && ./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44 | bc -l)")
+csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
+csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
 ratio1=0.00007
 ratio2=0.00006
 
-if [ $csbal < 1 ]
+if ((csbal < 1 ));
 then
        echo -e "${yel}Enter the number of coins that you want to coldstake on this node and press enter:${neutre}" && read csbal
 fi
