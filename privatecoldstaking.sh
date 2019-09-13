@@ -120,6 +120,6 @@ echo ""
 echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
 echo ""
 
-mv /root/particlcore/contractprivatecs.txt /root/Private-Coldstaking/contract.txt
+mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
