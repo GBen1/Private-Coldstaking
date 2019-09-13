@@ -65,14 +65,12 @@ csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 ratio1=0.00007
 ratio2=0.00006
 
+while ((csbal < 1))
+do
 clear
-
-if ((csbal < 1 ));
-then
-       echo -e "${yel}Enter the number of coins that you want to coldstake on this node:${neutre}" && read csbal
-       csbal=$(echo $csbal | cut -d "." -f 1 | cut -d "," -f 1)
-fi
-
+echo -e "${yel}Enter the number of coins that you want to coldstake on this node:${neutre}" && read csbal
+csbal=$(echo $csbal | cut -d "." -f 1 | cut -d "," -f 1 | tr -d [a-zA-Z]| sed -n '/^[[:digit:]]*$/p' )
+done
 
 amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" | bc -l)")
 amount2=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio2" | bc -l)")
