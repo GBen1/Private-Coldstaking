@@ -119,7 +119,3 @@ echo ""
 mv /root/particlcore/contractprivatecs.txt /root/Private-Coldstaking/contract.txt
 
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
-
-
-
-
