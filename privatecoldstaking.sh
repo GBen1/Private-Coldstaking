@@ -79,8 +79,8 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=
 
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet $amount2; sleep $[$RANDOM+1]s; done'" > script2.sh
 
-time1=$(cat script1.sh | cut -c313- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2-)
-time2=$(cat script2.sh | cut -c165- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2-)
+time1=$(cat script1.sh | cut -c313- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time2=$(cat script2.sh | cut -c165- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
 
 clear
 
@@ -107,14 +107,8 @@ echo -e "${yel}Every${neutre}${gr} $time1 ${neutre}${yel}, the node is going to 
 echo "Every $time1, the node is going to anonymize $amount1 parts from the available coldstaking rewards of your public balance on this address $rewardaddress to your anon balance." >> contractprivatecs.txt
 echo ""
 echo "" >> contractprivatecs.txt
-echo -e "${yel}Every${neutre}${gr} $time2 ${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from your available anon balance to this public address${neutre}${gr}:"
-echo "Every $time2, the node is going to send you back $amount2 parts from your available anon balance to this public address:" >> contractprivatecs.txt
-echo ""
-echo "" >> contractprivatecs.txt
-echo -e "${gr}$wallet${neutre}"
-echo "$wallet" >> contractprivatecs.txt
-echo "" >> contractprivatecs.txt
-echo "" >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from your available anon balance to this public address: ${neutre}${gr}$wallet${neutre}"
+echo "Every $time2 seconds, the node is going to send you back $amount2 parts from your available anon balance to this public address: $wallet" >> contractprivatecs.txt
 echo ""
 echo ""
 echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
