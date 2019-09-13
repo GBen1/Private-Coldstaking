@@ -79,28 +79,51 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=
 
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet $amount2; sleep $[$RANDOM+1]s; done'" > script2.sh
 
+time1=$(cat script1.sh | cut -c313- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2-)
+time2=$(cat script2.sh | cut -c165- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2-)
+
 clear
 
 echo -e "${gr}PARTICL PRIVATE COLDSTAKING ${neutre}"
+echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
 echo ""
 echo ""
-echo -e "${yel}Your coldstaking rewards are going to be anonymized on your coldstakingnode (from this address:${neutre}${gr} $rewardaddress${neutre}${yel}), afterward they will be automatically sent back to you on this address:${neutre}"
-echo ""
-echo -e "${gr}$wallet ${neutre}"
-echo ""
-echo ""
+echo "" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
 if ((csbalfin < 1 ));
 then
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
+echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
+echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
+echo "$extaddress" >> contractprivatecs.txt
 echo ""
 echo ""
+echo "" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
 fi
-
+echo -e "${yel}Every${neutre}${gr} $time1 ${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from the available coldstaking rewards of your public balance on this address${neutre}${gr} $rewardaddress ${neutre}${yel}to your anon balance.${neutre}"
+echo "Every $time1, the node is going to anonymize $amount1 parts from the available coldstaking rewards of your public balance on this address $rewardaddress to your anon balance." >> contractprivatecs.txt
+echo ""
+echo "" >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time2 ${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from your available anon balance to this public address${neutre}${gr}:"
+echo "Every $time2, the node is going to send you back $amount2 parts from your available anon balance to this public address:" >> contractprivatecs.txt
+echo ""
+echo "" >> contractprivatecs.txt
+echo -e "${gr}$wallet${neutre}"
+echo "$wallet" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
+echo ""
+echo ""
 echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
 echo ""
 
+mv /root/particlcore/contractprivatecs.txt /root/Private-Coldstaking/contract.txt
+
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
+
+
 
 
