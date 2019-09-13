@@ -107,9 +107,13 @@ echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is go
 echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from this public address $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
 echo "" >> contractprivatecs.txt
+echo ""
 echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to this public address: ${neutre}"
+echo ""
 echo -e "${gr}$wallet ${neutre}"
+echo "" >> contractprivatecs.txt
 echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance of your node to this public address: $wallet$" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
 echo "$wallet" >> contractprivatecs.txt
 echo ""
 echo ""
