@@ -68,6 +68,7 @@ clear
 if ((csbal < 1 ));
 then
        echo -e "${yel}Enter the number of coins that you want to coldstake on this node:${neutre}" && read csbal
+       csbal=$(echo $csbal | cut -d "." -f 1 | cut -d "," -f 1)
 fi
 
 
