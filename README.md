@@ -1,13 +1,15 @@
 # Private-Coldstaking
 
-INSTALL/REINSTALL
+***INSTALL/REINSTALL***
 
 bash privatecoldstaking.sh
 
-UNINSTALL
+
+***UNINSTALL***
 
 bash uninstall.sh
 
-CURRENT SCRIPT
+
+***CURRENT SCRIPT***
 
 cat contract.txt
