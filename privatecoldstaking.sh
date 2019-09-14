@@ -206,8 +206,8 @@ echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 fi
-echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}"
-echo -e "${gr}$rewardaddress${neutre}${yel} to the anon balance of your wallet.${neutre}"
+echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking${neutre}" 
+echo -e "${yel}rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your wallet.${neutre}"
 echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking" >> contractprivatecs.txt
 echo "rewards on this address: $rewardaddress to the anon balance of your wallet." >> contractprivatecs.txt
 echo ""
