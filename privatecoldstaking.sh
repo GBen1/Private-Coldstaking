@@ -1,6 +1,7 @@
 yel='\e[1;33m'
 neutre='\e[0;m'
 gr='\e[1;32m'
+red='\e[0;31m'
 
 cd
 
@@ -39,6 +40,19 @@ clear
 git pull
 
 yes | ./partyman update
+
+clear
+
+while [[ ! "$sendto" =~ ^(private)$ ]] && [[ ! "$sendto" =~ ^(public)$ ]]
+do
+clear
+echo -e "${yel}Do you want to receive your anonymized coins on the public or private balance of your wallet ? ${neutre}"
+echo -e "[${gr}public${neutre}]/${red}private${neutre}]"
+read sendto
+done
+
+if [ $sendto = "public" ]
+then
 
 while [ "$numcharaddress" != "35" ]
 do
@@ -123,3 +137,80 @@ echo ""
 mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
+
+fi
+
+
+if [ $sendto = "private" ]
+then
+
+while [ "$numcharaddress" != "103" ]
+do
+clear
+cd && cd particlcore && echo -e "${yel}Enter a private address (stealth address) generated from your Desktop/Qt wallet, this address will be the reception address for your anonymized rewards:${neutre}" && read wallet
+numcharaddress=$(echo "$wallet" | wc -c)
+done
+echo "$wallet" > wallet.txt 
+
+rewardaddress=$(./particl-cli getnewaddress) 
+
+extaddress=$(./particl-cli getnewextaddress)
+
+./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
+
+stealthaddressnode=$(./particl-cli getnewstealthaddress) 
+
+echo "$stealthaddressnode" > stealthaddressnode.txt
+
+csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
+csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
+csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
+
+ratio1=0.00007
+
+while ((csbal < 1))
+do
+clear
+echo -e "${yel}Enter the number of coins that you want to coldstake on this node:${neutre}" && read csbal
+csbal=$(echo $csbal | cut -d "." -f 1 | cut -d "," -f 1 | tr -d [a-zA-Z]| sed -n '/^[[:digit:]]*$/p' )
+done
+
+amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" | bc -l)")
+
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendparttoanon $wallet $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
+
+time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+
+clear
+
+echo -e "${gr}PARTICL PRIVATE COLDSTAKING ${neutre}"
+echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
+echo ""
+echo ""
+echo "" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
+if ((csbalfin < 1 ));
+then
+echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
+echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
+echo ""
+echo "" >> contractprivatecs.txt
+echo -e "${gr}$extaddress ${neutre}"
+echo "$extaddress" >> contractprivatecs.txt
+echo ""
+echo ""
+echo "" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
+fi
+echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your wallet.${neutre}"
+echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your wallet." >> contractprivatecs.txt
+echo ""
+echo ""
+echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
+echo ""
+
+mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
+
+nohup bash script1.sh </dev/null >nohup.out 2>nohup.err &
+
+fi
