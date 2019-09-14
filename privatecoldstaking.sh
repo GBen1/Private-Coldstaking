@@ -208,8 +208,6 @@ echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is go
 echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your wallet." >> contractprivatecs.txt
 echo ""
 echo ""
-echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
-echo ""
 
 mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
