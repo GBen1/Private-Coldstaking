@@ -80,6 +80,20 @@ csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 ratio1=0.00007
 ratio2=0.00006
 
+entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
+entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
+entro=$(printf '%.3f\n' "$(echo "$entro" "*" "1000" | bc -l)")
+entro=$(printf '%.3f\n' "$(echo "$entro" "+" "1000" | bc -l)")
+entro=$(echo "$entro" | cut -d "." -f 1 | cut -d "," -f 1)
+
+if [[ "$entro" -gt 1500 ]] ; then
+
+        entro=$(echo "$entro" "-" "500" | bc -l)
+fi
+
+entro=$(printf '%.3f\n' "$(echo "$entro" "/" "1000" | bc -l)")
+
+
 while ((csbal < 1))
 do
 clear
@@ -87,8 +101,8 @@ echo -e "${yel}Enter the number of coins that you want to coldstake on this node
 csbal=$(echo $csbal | cut -d "." -f 1 | cut -d "," -f 1 | tr -d [a-zA-Z]| sed -n '/^[[:digit:]]*$/p' )
 done
 
-amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" | bc -l)")
-amount2=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio2" | bc -l)")
+amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" "*" "$entro" | bc -l)")
+amount2=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio2" "*" "$entro" | bc -l)")
 
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
 
@@ -178,6 +192,19 @@ csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
 ratio1=0.00007
 
+entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
+entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
+entro=$(printf '%.3f\n' "$(echo "$entro" "*" "1000" | bc -l)")
+entro=$(printf '%.3f\n' "$(echo "$entro" "+" "1000" | bc -l)")
+entro=$(echo "$entro" | cut -d "." -f 1 | cut -d "," -f 1)
+
+if [[ "$entro" -gt 1500 ]] ; then
+
+        entro=$(echo "$entro" "-" "500" | bc -l)
+fi
+
+entro=$(printf '%.3f\n' "$(echo "$entro" "/" "1000" | bc -l)")
+
 while ((csbal < 1))
 do
 clear
@@ -185,7 +212,7 @@ echo -e "${yel}Enter the number of coins that you want to coldstake on this node
 csbal=$(echo $csbal | cut -d "." -f 1 | cut -d "," -f 1 | tr -d [a-zA-Z]| sed -n '/^[[:digit:]]*$/p' )
 done
 
-amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" | bc -l)")
+amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" "*" "$entro" | bc -l)")
 
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendparttoanon $wallet $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
 
