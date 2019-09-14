@@ -109,7 +109,7 @@ if ((csbalfin < 1 ));
 then
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking${neutre}"
 echo -e "${yel}smartcontract:${neutre}"
-echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking" >> contractprivatecs.tx 
+echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking" >> contractprivatecs.txt 
 echo "smartcontract:" >> contractprivatecs.txt
 echo ""
 echo "" >> contractprivatecs.txt
