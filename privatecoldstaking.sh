@@ -138,6 +138,8 @@ echo "" >> contractprivatecs.txt
 echo "$wallet" >> contractprivatecs.txt
 echo ""
 echo ""
+echo "" >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
 echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
 echo ""
 
