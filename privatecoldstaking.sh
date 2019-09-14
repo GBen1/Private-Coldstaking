@@ -127,13 +127,13 @@ echo "rewards on this address: $rewardaddress to the anon balance of your node."
 echo ""
 echo "" >> contractprivatecs.txt
 echo ""
-echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of${neutre}" 
-echo -e "${yel}your node to this public address: ${neutre}"
+echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance${neutre}" 
+echo -e "${yel}of your node to this public address: ${neutre}"
 echo ""
 echo -e "${gr}$wallet ${neutre}"
 echo "" >> contractprivatecs.txt
-echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance of" >> contractprivatecs.txt
-echo "your node to this public address:" >> contractprivatecs.txt
+echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance" >> contractprivatecs.txt
+echo "of your node to this public address:" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 echo "$wallet" >> contractprivatecs.txt
 echo ""
