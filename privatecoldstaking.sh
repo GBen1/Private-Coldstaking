@@ -57,7 +57,8 @@ then
 while [ "$numcharaddress" != "35" ]
 do
 clear
-cd && cd particlcore && echo -e "${yel}Enter a public address generated from your Desktop/Qt/Copay wallet, this address will be the reception address for your anonymized rewards:${neutre}" && read wallet
+cd && cd particlcore && echo -e "${yel}Enter a public address generated from your Desktop/Qt/Copay wallet,${neutre}"
+echo -e "${yel}this address will be the reception address for your anonymized rewards:${neutre}" && read wallet
 numcharaddress=$(echo "$wallet" | wc -c)
 done
 echo "$wallet" > wallet.txt 
@@ -147,7 +148,8 @@ then
 while [ "$numcharaddress" != "103" ]
 do
 clear
-cd && cd particlcore && echo -e "${yel}Enter a private address (stealth address) generated from your Desktop/Qt wallet, this address will be the reception address for your coldstaking rewards:${neutre}" && read wallet
+cd && cd particlcore && echo -e "${yel}Enter a private address (stealth address) generated from your Desktop/Qt wallet,${neutre}"
+echo -e "${yel}this address will be the reception address for your coldstaking rewards:${neutre}" && read wallet
 numcharaddress=$(echo "$wallet" | wc -c)
 done
 echo "$wallet" > wallet.txt 
