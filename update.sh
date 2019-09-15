@@ -1,6 +1,6 @@
 neutre='\e[0;m'
 gr='\e[1;32m'
-bl='\e[1;36m'
+cy='\e[0;36m'
 
 git pull
 cd
@@ -20,8 +20,8 @@ read -p "Press [Enter] key to continue..."
 clear
 cd
 cd particlcore
-echo -e "${bl}NODE BALANCES${neutre}"
+echo -e "${cy}NODE BALANCES${neutre}"
 echo ""
 balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d")
-echo -e "${bl}$balances${neutre}"
+echo -e "${cy}$balances${neutre}"
 echo ""
