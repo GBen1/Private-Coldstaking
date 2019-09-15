@@ -22,6 +22,6 @@ cd
 cd particlcore
 echo -e "${cy}NODE BALANCES${neutre}"
 echo ""
-balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d" | sed 's/"//')
+balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d" | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3- | rev | cut -c6- | rev)
 echo -e "${cy}$balances${neutre}"
 echo ""
