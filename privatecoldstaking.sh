@@ -41,7 +41,12 @@ clear
 
 clear
 
+while [ "$checkinit" != "35" ]
+do
+clear
 ./partyman stakingnode init
+cd && cd particlcore && checkinit=$(./particl-cli getnewaddress | wc -c) && cd && cd partyman
+done
 
 git pull
 
