@@ -18,3 +18,4 @@ cd particlcore
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
 ./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d"
+echo ""
