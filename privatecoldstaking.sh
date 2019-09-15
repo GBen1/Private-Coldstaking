@@ -29,7 +29,11 @@ cd ~ && git clone https://github.com/dasource/partyman
 
 cd partyman/
 
+clear
+
 yes | ./partyman install
+
+clear
 
 ./partyman restart now
 
@@ -38,6 +42,8 @@ clear
 ./partyman stakingnode init
 
 git pull
+
+clear
 
 yes | ./partyman update
 
