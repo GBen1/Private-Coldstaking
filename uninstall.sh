@@ -15,6 +15,10 @@ anontopart=$(ps -ef | grep bash | grep anontopart | cut -c10-14)
 num=$(echo $anontopart | wc -w)
 x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontopart | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
+anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c10-14)
+num=$(echo $anontoblind | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoblind | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
 cd Private-Coldstaking
 rm contract.txt
 cd
