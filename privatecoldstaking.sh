@@ -185,7 +185,7 @@ csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
-ratio1=0.00007
+ratio1=0.00006
 
 entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
 entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
