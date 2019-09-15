@@ -27,7 +27,7 @@ contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d")
 clear
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
-balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d" | sed 's/"//' | sed 's/"//' |sed 's/,//' | sed 's/txcount//' | cut -c3- | rev | cut -c6- | rev | tac | sed "1d" | tac)
+balances=$(./particl-cli getwalletinfo | sed "1,3d" | tac | sed "1,9d" | tac | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3- | rev | cut -c6- | rev)
 echo -e "${yel}$balances${neutre}"
 echo ""
 echo ""
