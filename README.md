@@ -24,7 +24,7 @@
 
 `bash uninstall.sh`
 
-## UPDATE YOUR NODE && GET NODE INFOS
+## UPDATE YOUR NODE & GET NODE INFOS
 
 `bash update.sh`
 
