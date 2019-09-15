@@ -2,7 +2,7 @@
 
 * **This script allows you to anonymize automatically your coldstaking rewards on your node and to redirect them automatically to the public balance of your wallet.**
 * **This script allows you to anonymize automatically your coldstaking rewards on your node and to redirect them automatically to the blind balance of your wallet.**
-* **This script allows you to redirect automatically your coldstaking rewards to the anon balance of your wallet.**
+* **This script allows you to anonymize automatically your coldstaking rewards on your node and to redirect them automatically to the anon balance of your wallet.**
 
 * **If you already have a coldstaking node installed, this script will transform it into a private coldstaking node.**
 * **If you don't already have a coldstaking node installed, this script will create a Private coldstaking node.**
