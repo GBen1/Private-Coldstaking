@@ -9,6 +9,7 @@ clear
 git pull
 clear
 yes | ./partyman update
+echo ""
 read -p "Press [Enter] key to continue..."
 clear
 ./partyman status
