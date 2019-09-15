@@ -369,7 +369,7 @@ mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
 fi
 
-read -p "${gr}Press [Enter] key to continue...${neutre}"
+read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 
 clear
 echo -e "${bl}PRIVATE COLDSTAKING V1.0${neutre}"
