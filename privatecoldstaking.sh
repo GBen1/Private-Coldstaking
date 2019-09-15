@@ -131,7 +131,7 @@ clear
 clear
 clear
 echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0 ${neutre}"
-echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
+echo "PARTICL PRIVATE COLDSTAKING V1.0" > contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
@@ -218,7 +218,7 @@ clear
 clear
 clear
 echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0${neutre}"
-echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
+echo "PARTICL PRIVATE COLDSTAKING V1.0" > contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
@@ -307,7 +307,7 @@ clear
 clear
 clear
 echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0 ${neutre}"
-echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
+echo "PARTICL PRIVATE COLDSTAKING V1.0" > contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
