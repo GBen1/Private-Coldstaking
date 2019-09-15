@@ -1,8 +1,8 @@
 cd
 cd particlcore
 
-csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold| cut -c34- | rev | cut -c2- | rev | sed 's/ //')
-echo "csbalance "$csbalance"
+csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c34- | rev | cut -c2- | rev | sed 's/ //')
+echo "csbalance $csbalance"
 
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 echo "csbal $csbal"
