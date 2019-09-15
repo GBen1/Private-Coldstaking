@@ -26,6 +26,7 @@ rm script1.sh
 rm script2.sh
 rm nohup.out
 rm nohup.err
+rm contractprivatecs.txt
 
 cd
 
