@@ -21,6 +21,8 @@ anontopart=$(ps -ef | grep bash | grep anontopart | cut -c10-14)
 num=$(echo $anontopart | wc -w)
 x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontopart | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
+clear
+
 sudo apt-get update && sudo apt-get upgrade <<< y
 
 sudo apt-get install python git unzip pv jq <<< y
