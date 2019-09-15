@@ -9,7 +9,7 @@ echo "csbal $csbal"
 
 ratio1=0.00007
 
-echo "ratio1 = 0.0007"
+echo "ratio1 = 0.00007"
 
 entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
 entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
