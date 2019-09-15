@@ -234,10 +234,8 @@ echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 if ((csbalfin < 1 ));
 then
-echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking${neutre}"
-echo -e "${yel}smartcontract:${neutre}"
-echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking" >> contractprivatecs.txt
-echo "smartcontract:" >> contractprivatecs.txt
+echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
+echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
 echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
@@ -247,10 +245,8 @@ echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 fi
-echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking${neutre}" 
-echo -e "${yel}rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your wallet.${neutre}"
-echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking" >> contractprivatecs.txt
-echo "rewards on this address: $rewardaddress to the anon balance of your wallet." >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your wallet.${neutre}" 
+echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your wallet." >> contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
