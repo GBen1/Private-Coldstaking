@@ -37,3 +37,8 @@
 ## VERIFY ACTIVE SCRIPTS
 
 `bash verify.sh`
+
+
+## DEBUG
+
+`bash log.sh`
