@@ -24,7 +24,12 @@ clear
 cd
 cd particlcore
 contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d")
+csb=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44 | cut -d "." -f 1 | cut -d "," -f 1)
 clear
+echo -e "${gr}COLDSTAKING BALANCE${neutre}"
+echo ""
+echo -e "${gr}$csb${neutre}"
+echo ""
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
 network=$(./particl-cli getstakinginfo | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3-)
