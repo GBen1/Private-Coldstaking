@@ -1,4 +1,4 @@
-# Private-Coldstaking v1.0
+# PRIVATE COLDSTAKING V1.0
 
 * **This script allows you to anonymize automatically your coldstaking rewards on your node and to redirect them automatically to the public balance of your wallet.**
 * **This script allows you to anonymize automatically your coldstaking rewards on your node and to redirect them automatically to the blind balance of your wallet.**
