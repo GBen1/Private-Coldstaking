@@ -1,7 +1,7 @@
 yel='\e[1;33m'
 neutre='\e[0;m'
 gr='\e[1;32m'
-red='\e[0;31m'
+red='\e[1;31m'
 bl='\e[1;36m'
 
 cd
