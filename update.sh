@@ -28,7 +28,7 @@ csb=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44 | cut -
 clear
 echo -e "${gr}COLDSTAKING BALANCE${neutre}"
 echo ""
-echo -e "${gr}$csb${neutre}"
+echo -e "${gr}$csb PARTS${neutre}"
 echo ""
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
