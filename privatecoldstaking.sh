@@ -125,8 +125,11 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli senda
 time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
 time2=$(cat script2.sh | cut -c120- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
 
+nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 clear
-
+clear
+clear
+clear
 echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0 ${neutre}"
 echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
 echo ""
@@ -160,15 +163,8 @@ echo "Every $time2 seconds, the node is going to send you back $amount2 parts fr
 echo "" >> contractprivatecs.txt
 echo "$wallet" >> contractprivatecs.txt
 echo ""
-echo ""
-echo "" >> contractprivatecs.txt
-echo "" >> contractprivatecs.txt
-echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
-echo ""
 
 mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
-
-nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 
 fi
 
@@ -216,9 +212,11 @@ amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" "*" "$entro" | bc -l)")
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendparttoanon $wallet $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
 
 time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
-
+nohup bash script1.sh </dev/null >nohup.out 2>nohup.err &
 clear
-
+clear
+clear
+clear
 echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0${neutre}"
 echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
 echo ""
@@ -248,10 +246,7 @@ echo "" >> contractprivatecs.txt
 
 mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
-nohup bash script1.sh </dev/null >nohup.out 2>nohup.err &
-
 fi
-
 
 
 if [ $sendto = "blind" ]
@@ -306,8 +301,11 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli senda
 time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
 time2=$(cat script2.sh | cut -c189- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
 
+nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 clear
-
+clear
+clear
+clear
 echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0 ${neutre}"
 echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
 echo ""
@@ -333,17 +331,13 @@ echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from y
 echo ""
 echo ""
 echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to the blind balance of your wallet.${neutre}" 
-echo ""
-echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance of your node to the blind balance of your wallet." >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-echo -e "${yel}Press${neutre} ${gr}ENTER${neutre} ${yel}to finalize this process${neutre}"
 echo ""
 
 mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
-nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 
 fi
