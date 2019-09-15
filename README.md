@@ -35,11 +35,9 @@
 * If you have not downloaded the Private-Coldstaking repository in the root folder:  
 `cd && cd particlcore && cat contractprivatecs.txt`
 
-
 ## VERIFY ACTIVE SCRIPTS
 
 `bash verify.sh`
-
 
 ## DEBUG
 
