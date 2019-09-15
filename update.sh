@@ -13,13 +13,13 @@ git pull
 clear
 yes | ./partyman update
 echo ""
-read -p "Press [Enter] key to continue..."
+read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
 ./partyman status
-read -p "Press [Enter] key to continue..."
+read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
 ./partyman stakingnode stats
-read -p "Press [Enter] key to continue..."
+read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
 cd
 cd particlcore
