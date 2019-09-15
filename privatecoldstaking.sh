@@ -6,7 +6,7 @@ bl='\e[1;36m'
 
 clear
 readme=$(cat README.md | tac | sed "1,31d" | tac)
-echo -e "${red}$readme${neutre}"
+echo -e "${bl}$readme${neutre}"
 echo ""
 read -p "Press [Enter] key to continue..."
 readme=$(cat README.md |  sed "1,17d")
@@ -372,9 +372,9 @@ fi
 read -p "Press [Enter] key to continue..."
 
 clear
-echo -e "${red}PRIVATE COLDSTAKING V1.0${neutre}"
+echo -e "${bl}PRIVATE COLDSTAKING V1.0${neutre}"
 echo ""
-echo -e "${red}$readme${neutre}"
+echo -e "${bl}$readme${neutre}"
 echo ""
 
 
