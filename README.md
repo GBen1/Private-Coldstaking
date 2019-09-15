@@ -1,4 +1,4 @@
-# Private-Coldstaking
+# Private-Coldstaking v1.0
 
 **INSTALL/REINSTALL**
 
