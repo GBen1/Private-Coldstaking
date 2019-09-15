@@ -21,13 +21,13 @@ read -p "Press [Enter] key to continue..."
 clear
 cd
 cd particlcore
-echo -e "${gr}NODE BALANCES${neutre}"
+echo -e "${cy}NODE BALANCES${neutre}"
 echo ""
 balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d" | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3- | rev | cut -c6- | rev)
 echo -e "${bl}$balances${neutre}"
 echo ""
 echo ""
-echo -e "${gr}ACTIVE SCRIPTS${neutre}"
+echo -e "${cy}ACTIVE SCRIPTS${neutre}"
 echo ""
 parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
 echo ""
