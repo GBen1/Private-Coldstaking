@@ -39,8 +39,6 @@ clear
 
 ./partyman restart now
 
-clear
-
 while [ "$checkinit" != "35" ]
 do
 clear
