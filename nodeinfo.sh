@@ -4,6 +4,7 @@ gr='\e[1;32m'
 git pull
 cd
 cd partyman
+clear
 git pull
 clear
 yes | ./partyman update
