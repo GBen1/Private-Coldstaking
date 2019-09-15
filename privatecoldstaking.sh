@@ -43,7 +43,10 @@ while [ "$checkinit" != "35" ]
 do
 clear
 ./partyman stakingnode init
-cd && cd particlcore && checkinit=$(./particl-cli getnewaddress | wc -c) && cd && cd partyman
+cd && cd particlcore 
+rewardaddress=$(./particl-cli getnewaddress) 
+checkinit=$(echo "$rewardaddress" | wc -c)  
+cd && cd partyman
 done
 
 git pull
@@ -68,20 +71,14 @@ then
 while [ "$numcharaddress" != "35" ]
 do
 clear
-cd && cd particlcore && echo -e "${yel}Enter a public address generated from your Desktop/Qt/Copay wallet, this address will be the reception address for your anonymized rewards:${neutre}" && read wallet
+cd && cd particlcore  
+echo -e "${yel}Enter a public address generated from your Desktop/Qt/Copay wallet, this address will be the reception address for your anonymized rewards:${neutre}" && read wallet
 numcharaddress=$(echo "$wallet" | wc -c)
 done
-echo "$wallet" > wallet.txt 
-
-rewardaddress=$(./particl-cli getnewaddress) 
-
-extaddress=$(./particl-cli getnewextaddress)
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
 
 stealthaddressnode=$(./particl-cli getnewstealthaddress) 
-
-echo "$stealthaddressnode" > stealthaddressnode.txt
 
 csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
@@ -114,12 +111,12 @@ done
 amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" "*" "$entro" | bc -l)")
 amount2=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio2" "*" "$entro" | bc -l)")
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && stealthaddressnode=$(cat stealthaddressnode.txt) && ./particl-cli sendparttoanon $stealthaddressnode $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendparttoanon $stealthaddressnode $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && wallet=$(cat wallet.txt) && ./particl-cli sendanontopart $wallet $amount2; sleep $[$RANDOM+1]s; done'" > script2.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendanontopart $wallet $amount2; sleep $[$RANDOM+1]s; done'" > script2.sh
 
-time1=$(cat script1.sh | cut -c313- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
-time2=$(cat script2.sh | cut -c165- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time2=$(cat script2.sh | cut -c120- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
 
 clear
 
@@ -131,6 +128,7 @@ echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 if ((csbalfin < 1 ));
 then
+extaddress=$(./particl-cli getnewextaddress)
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
 echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
@@ -177,17 +175,8 @@ clear
 cd && cd particlcore && echo -e "${yel}Enter a private address (stealth address) generated from your Desktop/Qt wallet, this address will be the reception address for your coldstaking rewards:${neutre}" && read wallet
 numcharaddress=$(echo "$wallet" | wc -c)
 done
-echo "$wallet" > wallet.txt 
-
-rewardaddress=$(./particl-cli getnewaddress) 
-
-extaddress=$(./particl-cli getnewextaddress)
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
-
-stealthaddressnode=$(./particl-cli getnewstealthaddress) 
-
-echo "$stealthaddressnode" > stealthaddressnode.txt
 
 csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
@@ -231,6 +220,7 @@ echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 if ((csbalfin < 1 ));
 then
+extaddress=$(./particl-cli getnewextaddress)
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
 echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
