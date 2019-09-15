@@ -4,6 +4,10 @@ gr='\e[1;32m'
 red='\e[1;31m'
 bl='\e[1;36m'
 
+readme=$(cat REAMDE.md)
+echo -e "${red}$reamde${neutre}"
+read -p "Press [Enter] key to continue..."
+
 cd
 
 script1=$(ps -ef | grep bash | grep script1.sh | cut -c10-14)
