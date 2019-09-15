@@ -27,7 +27,7 @@ balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d" | sed 's/"
 echo -e "${bl}$balances${neutre}"
 echo ""
 echo ""
-echo "${bl}ACTIVE SCRIPTS${neutre}"
+echo -e "${bl}ACTIVE SCRIPTS${neutre}"
 echo ""
 ps -ef | grep bash | grep parttoanon | cut -c49-
 echo ""
