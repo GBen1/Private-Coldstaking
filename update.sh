@@ -5,7 +5,7 @@ bl='\e[1;36m'
 yel='\e[1;33m'
 
 git pull
-contract=$(cat contract.txt)
+contract=$(cat contract.txt | sed "1,2d")
 cd
 cd partyman
 clear
@@ -23,7 +23,7 @@ read -p "Press [Enter] key to continue..."
 clear
 cd
 cd particlcore
-contractprivatecs=$(cat contractprivatecs.txt)
+contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d")
 clear
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
