@@ -96,7 +96,7 @@ done
 
 stealthaddressnode=$(./particl-cli getnewstealthaddress) 
 
-csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
+csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold| cut -c34- | rev | cut -c2- | rev | sed 's/ //')
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
@@ -190,7 +190,7 @@ done
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
 
-csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
+csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold| cut -c34- | rev | cut -c2- | rev | sed 's/ //')
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
@@ -272,7 +272,7 @@ done
 
 stealthaddressnode=$(./particl-cli getnewstealthaddress) 
 
-csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44)
+csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold| cut -c34- | rev | cut -c2- | rev | sed 's/ //')
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
