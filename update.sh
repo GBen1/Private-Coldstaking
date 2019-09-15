@@ -32,7 +32,7 @@ balances=$(./particl-cli getwalletinfo | sed "1,3d" | tac | sed "1,9d" | tac | s
 echo -e "${yel}$balances${neutre}"
 echo ""
 echo ""
-echo -e ${gr}NETWORK INFOS${neutre}"
+echo -e "${gr}NETWORK INFOS${neutre}"
 echo ""
 echo -e "${yel}$network${neutre}"
 echo ""
