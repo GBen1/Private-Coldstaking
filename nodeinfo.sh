@@ -3,6 +3,10 @@ gr='\e[1;32m'
 
 cd
 cd partyman
+git pull
+clear
+yes | ./partyman update
+clear
 ./partyman status
 read -p "Press [Enter] key to continue..."
 clear
