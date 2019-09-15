@@ -13,3 +13,8 @@ bash uninstall.sh
 **CURRENT SCRIPT**
 
 cat contract.txt
+
+
+**VERIFY ACTIVE SCRIPTS**
+
+bash verify.sh
