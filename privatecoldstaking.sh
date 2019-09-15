@@ -120,7 +120,7 @@ time2=$(cat script2.sh | cut -c165- | rev | cut -d "p" -f 1 | rev | cut -d ";" -
 
 clear
 
-echo -e "${gr}PARTICL PRIVATE COLDSTAKING ${neutre}"
+echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0 ${neutre}"
 echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
 echo ""
 echo ""
@@ -220,7 +220,7 @@ time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -
 
 clear
 
-echo -e "${gr}PARTICL PRIVATE COLDSTAKING ${neutre}"
+echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0${neutre}"
 echo "PARTICL PRIVATE COLDSTAKING" > contractprivatecs.txt
 echo ""
 echo ""
