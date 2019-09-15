@@ -9,6 +9,7 @@ clear
 git pull
 clear
 yes | ./partyman update
+read -p "Press [Enter] key to continue..."
 clear
 ./partyman status
 read -p "Press [Enter] key to continue..."
@@ -18,7 +19,7 @@ read -p "Press [Enter] key to continue..."
 clear
 cd
 cd particlcore
-echo -e "${gr}NODE BALANCES${neutre}"
+echo -e "${bl}NODE BALANCES${neutre}"
 echo ""
 balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d")
 echo -e "${bl}$balances${neutre}"
