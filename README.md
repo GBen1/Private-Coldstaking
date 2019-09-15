@@ -27,7 +27,7 @@
 
 `bash update.sh`
 
-## CURRENT SCRIPT
+## CHECK CURRENT SCRIPT
 
 * If you have downloaded the Private-Coldstaking repository in the root folder:                                                           
 `cat contract.txt` 
