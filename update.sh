@@ -5,7 +5,7 @@ bl='\e[1;36m'
 yel='\e[1;33m'
 
 git pull
-contract=$(cat contract.txt]
+contract=$(cat contract.txt)
 cd
 cd partyman
 clear
