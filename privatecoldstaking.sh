@@ -369,8 +369,8 @@ mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
 fi
 
+echo ""
 read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
-
 clear
 echo -e "${bl}PRIVATE COLDSTAKING V1.0${neutre}"
 echo ""
