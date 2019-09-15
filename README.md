@@ -8,7 +8,7 @@
 * **If you don't already have a coldstaking node installed, this script will create a Private coldstaking node.**
 
 * *The anonymization cycles vary from 1 to 32767seconds.*
-* *The amounts sent during each cycles of anonymization vary from ["your coldstakingbalance" * "0.00007" * "1.000"] to ["your coldstakingbalance" * "0.00006" * "1.500"]*
+* *The amounts sent during each cycles of anonymization vary from ["your coldstakingbalance" * "0.00007" * "1.000"] to ["your coldstakingbalance" * "0.00007" * "1.500"]*
 * *The amounts sent during each cycles of transfer to your wallet vary from ["your coldstakingbalance" * "0.00006" * "1.000"] to ["your coldstakingbalance" * "0.00006" * "1.500"].*
 
 ## DOWNLOAD
