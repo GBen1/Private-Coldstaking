@@ -30,6 +30,7 @@ echo -e "${gr}COLDSTAKING BALANCE${neutre}"
 echo ""
 echo -e "${yel}$csb PARTS${neutre}"
 echo ""
+echo ""
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
 network=$(./particl-cli getstakinginfo | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3-)
