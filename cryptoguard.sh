@@ -17,6 +17,13 @@ entro=$(printf '%.3f\n' "$(echo "$entro" "*" "1000" | bc -l)")
 entro=$(printf '%.3f\n' "$(echo "$entro" "+" "1000" | bc -l)")
 entro=$(echo "$entro" | cut -d "." -f 1 | cut -d "," -f 1)
 
+if [[ "$entro" -gt 1500 ]] ; then
+
+        entro=$(echo "$entro" "-" "500" | bc -l)
+fi
+
+entro=$(printf '%.3f\n' "$(echo "$entro" "/" "1000" | bc -l)")
+
 echo "entropie $entro"
 
 amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" "*" "$entro" | bc -l)")
