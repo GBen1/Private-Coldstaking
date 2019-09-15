@@ -32,6 +32,10 @@ anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c10-14)
 num=$(echo $anontoblind | wc -w)
 x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoblind | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
+anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c10-14)
+num=$(echo $anontoanon | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoanon | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
 cd particlcore
 rm wallet.txt
 rm stealthaddressnode.txt
@@ -192,11 +196,14 @@ done
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
 
+stealthaddressnode=$(./particl-cli getnewstealthaddress) 
+
 csbalance=$(./particl-cli getcoldstakinginfo | grep coin_in_cold| cut -c34- | rev | cut -c2- | rev | sed 's/ //')
 csbal=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 csbalfin=$(echo $csbalance | cut -d "." -f 1 | cut -d "," -f 1)
 
-ratio1=0.00006
+ratio1=0.00007
+ratio2=0.00006
 
 entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
 entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
@@ -219,11 +226,15 @@ csbal=$(echo $csbal | cut -d "." -f 1 | cut -d "," -f 1 | tr -d [a-zA-Z]| sed -n
 done
 
 amount1=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio1" "*" "$entro" | bc -l)")
+amount2=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio2" "*" "$entro" | bc -l)")
 
-echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendparttoanon $wallet $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendparttoanon  $stealthaddressnode $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
+echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendanontoanon $wallet $amount2; sleep $[$RANDOM+1]s; done' " > script2.sh
 
 time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
-nohup bash script1.sh </dev/null >nohup.out 2>nohup.err &
+time2=$(cat script2.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+
+nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 clear
 clear
 clear
@@ -248,12 +259,16 @@ echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 fi
-echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your wallet.${neutre}" 
-echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your wallet." >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}" 
+echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to the anon balance of your wallet.${neutre}" 
+echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance of your node to the blind balance of your wallet." >> contractprivatecs.txt
+echo "" >> contractprivatecs.txt
+echo ""
 
 mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
