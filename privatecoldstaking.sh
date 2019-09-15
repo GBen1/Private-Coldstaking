@@ -9,6 +9,7 @@ readme=$(cat README.md | tac | sed "1,31d" | tac)
 echo -e "${red}$readme${neutre}"
 echo ""
 read -p "Press [Enter] key to continue..."
+readme=$(cat README.md |  sed "1,17d")
 
 cd
 
@@ -367,3 +368,14 @@ mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
 
 fi
+
+read -p "Press [Enter] key to continue..."
+
+clear
+echo -e "${red}PRIVATE COLDSTAKING V1.0${neutre}"
+echo ""
+echo -e "${red}$readme${neutre}"
+echo ""
+
+
+
