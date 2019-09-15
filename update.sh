@@ -31,7 +31,10 @@ echo -e "${bl}ACTIVE SCRIPTS${neutre}"
 echo ""
 parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
 echo ""
+echo -e "${bl}$parttoanon${neutre}"
 anontopart=$(ps -ef | grep bash | grep anontopart | cut -c49-)
 echo ""
+echo -e "${bl}$anontopart${neutre}"
 anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
 echo ""
+echo -e "${bl}$anontoblind${neutre}"
