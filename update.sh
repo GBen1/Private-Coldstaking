@@ -29,9 +29,9 @@ echo ""
 echo ""
 echo -e "${bl}ACTIVE SCRIPTS${neutre}"
 echo ""
-ps -ef | grep bash | grep parttoanon | cut -c49-
+parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
 echo ""
-ps -ef | grep bash | grep anontopart | cut -c49-
+anontopart=$(ps -ef | grep bash | grep anontopart | cut -c49-)
 echo ""
-ps -ef | grep bash | grep anontoblind | cut -c49-
+anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
 echo ""
