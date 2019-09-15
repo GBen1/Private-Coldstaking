@@ -19,15 +19,13 @@
 
 `bash privatecoldstaking.sh`
 
-
-## UNINSTALL
-
-`bash uninstall.sh`
-
 ## UPDATE YOUR NODE & GET NODE INFOS
 
 `bash update.sh`
 
+## UNINSTALL
+
+`bash uninstall.sh`
 
 ## CURRENT SCRIPT
 
