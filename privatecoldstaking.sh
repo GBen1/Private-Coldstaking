@@ -7,6 +7,7 @@ bl='\e[1;36m'
 clear
 readme=$(cat README.md)
 echo -e "${red}$readme${neutre}"
+echo ""
 read -p "Press [Enter] key to continue..."
 
 cd
