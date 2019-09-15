@@ -25,7 +25,13 @@ echo -e "${bl}NODE BALANCES${neutre}"
 echo ""
 balances=$(./particl-cli getwalletinfo | sed -n '4,/tx/p' | sed "11d" | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3- | rev | cut -c6- | rev)
 echo -e "${bl}$balances${neutre}"
-verify=$(bash verify.sh)
 echo ""
-echo "$verify"
+echo ""
+echo "${bl}ACTIVE SCRIPTS${neutre}"
+echo ""
+ps -ef | grep bash | grep parttoanon | cut -c49-
+echo ""
+ps -ef | grep bash | grep anontopart | cut -c49-
+echo ""
+ps -ef | grep bash | grep anontoblind | cut -c49-
 echo ""
