@@ -8,7 +8,7 @@ clear
 readme=$(cat README.md | tac | sed "1,31d" | tac)
 echo -e "${bl}$readme${neutre}"
 echo ""
-read -p "${gr}Press [Enter] key to continue...${neutre}"
+read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 readme=$(cat README.md |  sed "1,17d")
 
 cd
