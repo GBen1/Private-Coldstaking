@@ -27,8 +27,14 @@ contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d")
 clear
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
+network=$(./particl-cli getstakinginfo | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3-)
 balances=$(./particl-cli getwalletinfo | sed "1,3d" | tac | sed "1,9d" | tac | sed 's/"//' | sed 's/"//' |sed 's/,//' | cut -c3- | rev | cut -c6- | rev )
 echo -e "${yel}$balances${neutre}"
+echo ""
+echo ""
+echo -e ${gr}NETWORK INFOS${neutre}"
+echo ""
+echo -e "${yel}$network${neutre}"
 echo ""
 echo ""
 echo -e "${gr}PRIVATE COLDSTAKING CONTRACT${neutre}"
