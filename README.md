@@ -12,23 +12,23 @@
 
 ## DOWNLOAD
 
-git clone https://github.com/GBen1/Private-Coldstaking.git 
+`git clone https://github.com/GBen1/Private-Coldstaking.git`
 
 ## INSTALL/REINSTALL
 
-bash privatecoldstaking.sh
+`bash privatecoldstaking.sh`
 
 
 ## UNINSTALL
 
-bash uninstall.sh
+`bash uninstall.sh`
 
 
 ## CURRENT SCRIPT
 
-cat contract.txt
+`cat contract.txt`
 
 
 ## VERIFY ACTIVE SCRIPTS
 
-bash verify.sh
+`bash verify.sh`
