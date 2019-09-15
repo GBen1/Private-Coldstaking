@@ -4,7 +4,8 @@ gr='\e[1;32m'
 red='\e[1;31m'
 bl='\e[1;36m'
 
-readme=$(cat REAMDE.md)
+clear
+readme=$(cat README.md)
 echo -e "${red}$reamde${neutre}"
 read -p "Press [Enter] key to continue..."
 
