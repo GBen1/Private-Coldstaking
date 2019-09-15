@@ -19,6 +19,16 @@ anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c10-14)
 num=$(echo $anontoblind | wc -w)
 x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoblind | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
+cd particlcore
+rm wallet.txt
+rm stealthaddressnode.txt
+rm script1.sh
+rm script2.sh
+rm nohup.out
+rm nohup.err
+
+cd
+
 cd Private-Coldstaking
 rm contract.txt
 cd
