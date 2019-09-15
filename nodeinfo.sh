@@ -1,6 +1,7 @@
 neutre='\e[0;m'
 gr='\e[1;32m'
 
+git pull
 cd
 cd partyman
 git pull
