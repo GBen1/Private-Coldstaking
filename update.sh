@@ -52,7 +52,6 @@ echo -e "${gr}PRIVATE COLDSTAKING CONTRACT${neutre}"
 echo -e "${yel}$contract${neutre}"
 echo -e "${yel}$contractprivatecs${neutre}"
 echo ""
-echo ""
 echo -e "${gr}ACTIVE SCRIPTS${neutre}"
 
 parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
