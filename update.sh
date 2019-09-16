@@ -72,8 +72,8 @@ echo -e "${yel}$anontoanon${neutre}"
 fi
 
 
-anonttoblind=$(ps -ef | grep bash | grep anonttoblind | cut -c49-)
-chps=$(echo $anonttoblind | wc -c)
+anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
+chps=$(echo $anontoblind | wc -c)
 if ((chps > 1 ));
 then
 echo ""
