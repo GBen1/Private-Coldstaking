@@ -70,3 +70,4 @@ echo -e "${yel}$anontoanon${neutre}"
 anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
 echo ""
 echo -e "${yel}$anontoblind${neutre}"
+echo ""
