@@ -7,7 +7,7 @@ red='\e[1;31m'
 bl='\e[1;36m'
 
 clear
-readme=$(cat README.md | tac | sed "1,31d" | tac)
+readme=$(cat README.md | tac | sed "1,24d" | tac)
 echo -e "${bl}$readme${neutre}"
 echo ""
 read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
