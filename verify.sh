@@ -42,7 +42,7 @@ fi
 
 
 anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
-chps=$(echo $anonttoblind | wc -c)
+chps=$(echo $anontoblind | wc -c)
 if ((chps > 1 ));
 then
 echo ""
