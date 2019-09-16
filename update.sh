@@ -56,18 +56,37 @@ echo ""
 echo -e "${gr}ACTIVE SCRIPTS${neutre}"
 
 parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
+chps=$(echo $parttoanon | wc -c)
+if ((chps > 1 ));
+then
 echo ""
 echo -e "${yel}$parttoanon${neutre}"
-
-anontopart=$(ps -ef | grep bash | grep anontopart | cut -c49-)
-echo ""
-echo -e "${yel}$anontopart${neutre}"
+fi
 
 anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c49-)
+chps=$(echo $anontoanon | wc -c)
+if ((chps > 1 ));
+then
 echo ""
 echo -e "${yel}$anontoanon${neutre}"
+fi
 
-anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
+
+anonttoblind=$(ps -ef | grep bash | grep anonttoblind | cut -c49-)
+chps=$(echo $anonttoblind | wc -c)
+if ((chps > 1 ));
+then
 echo ""
-echo -e "${yel}$anontoblind${neutre}"
+echo -e "${yel}$anonttoblind${neutre}"
+fi
+
+
+anontopart=$(ps -ef | grep bash | grep anontopart | cut -c49-)
+chps=$(echo $anontopart| wc -c)
+if ((chps > 1 ));
+then
+echo ""
+echo -e "${yel}$anontopart${neutre}"
+fi
+
 echo ""
