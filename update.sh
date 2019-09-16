@@ -1,3 +1,5 @@
+#!/bin/bash
+
 neutre='\e[0;m'
 gr='\e[1;32m'
 cy='\e[0;36m'
