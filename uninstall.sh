@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd
 script1=$(ps -ef | grep bash | grep script1.sh | cut -c10-14)
 num=$(echo $script1 | wc -w)
