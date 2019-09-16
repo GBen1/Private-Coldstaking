@@ -27,7 +27,7 @@
 
 `bash update.sh`
 
-## VERIFY ACTIVE SCRIPTS
+## VERIFY ACTIVE SCRIPTS & COLDSTAKING BALANCE
 
 `bash verify.sh`
 
