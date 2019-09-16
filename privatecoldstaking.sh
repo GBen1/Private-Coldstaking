@@ -1,3 +1,5 @@
+#!/bin/bash
+
 yel='\e[1;33m'
 neutre='\e[0;m'
 gr='\e[1;32m'
