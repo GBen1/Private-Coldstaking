@@ -44,6 +44,8 @@ echo -e "${gr}NETWORK INFOS${neutre}"
 echo -e "${yel}$network${neutre}"
 echo ""
 echo ""
+read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
+clear
 echo -e "${gr}PRIVATE COLDSTAKING CONTRACT${neutre}"
 echo -e "${yel}$contract${neutre}"
 echo -e "${yel}$contractprivatecs${neutre}"
