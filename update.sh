@@ -25,7 +25,7 @@ read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
 cd
 cd particlcore
-contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d") /dev/null 2>&1
+[ -f contractprivatecs.txt ] && contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d") 
 csb=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44 | cut -d "." -f 1 | cut -d "," -f 1)
 clear
 clear
