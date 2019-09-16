@@ -54,12 +54,19 @@ echo -e "${yel}$contractprivatecs${neutre}"
 echo ""
 echo ""
 echo -e "${gr}ACTIVE SCRIPTS${neutre}"
+
 parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
 echo ""
 echo -e "${yel}$parttoanon${neutre}"
+
 anontopart=$(ps -ef | grep bash | grep anontopart | cut -c49-)
 echo ""
 echo -e "${yel}$anontopart${neutre}"
+
+anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c49-)
+echo ""
+echo -e "${yel}$anontoanon${neutre}"
+
 anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
 echo ""
 echo -e "${yel}$anontoblind${neutre}"
