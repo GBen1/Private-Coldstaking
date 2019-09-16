@@ -4,8 +4,9 @@ neutre='\e[0;m'
 gr='\e[1;32m'
 yel='\e[1;33m'
 
-clear
+
 git pull
+clear
 contract=$(cat contract.txt | sed "1,2d")
 
 cd
