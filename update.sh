@@ -77,7 +77,7 @@ chps=$(echo $anontoblind | wc -c)
 if ((chps > 1 ));
 then
 echo ""
-echo -e "${yel}$anonttoblind${neutre}"
+echo -e "${yel}$anontoblind${neutre}"
 fi
 
 
