@@ -43,6 +43,7 @@ x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoanon |
 cd particlcore
 rm wallet.txt
 rm stealthaddressnode.txt
+rm errorscriptcs.txt
 cd
 
 clear
