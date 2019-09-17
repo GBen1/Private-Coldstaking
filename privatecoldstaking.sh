@@ -388,6 +388,14 @@ checkamount2=$(printf '%.3f\n' "$(echo "$amount2" "*" "1000" | bc -l)")
 checkamount2=$(echo "$checkamount2" | cut -d "." -f 1 | cut -d "," -f 1)
 
 if [ $checkamount1 -lt 20 ] || [ $checkamount2 -lt 20 ] || ([ $checkamount1 -lt 20 ] && [ $checkamount2 -lt 20 ]); then
+
+[ -f contractprivatecs.txt ] && rm contractprivatecs.txt
+
+cd
+cd Private-Coldstaking
+rm contract.txt
+
+
 clear
 cd
 cd partyman
