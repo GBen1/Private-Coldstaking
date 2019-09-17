@@ -381,7 +381,7 @@ read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 
 
 
-if [ $amount1 -eq 0 ] || [ $amount2 -eq 0 ] || ([ $amount1 -eq 0 ] && [ $amount2 -eq 0 ]); then
+if [ $amount1 -lt 0.001 ] || [ $amount2 -lt 0.001 ] || ([ $amount1 -lt 0.001 ] && [ $amount2 -lt 0.001 ]); then
 
 clear
 echo -e "${flred}ERROR: AMOUNT${neutre}"
