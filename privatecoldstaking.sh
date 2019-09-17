@@ -8,7 +8,7 @@ bl='\e[1;36m'
 flred='\e[1;41m'
 
 clear
-readme=$(cat README.md | tac | sed "1,24d" | tac)
+readme=$(cat README.md | tac | sed "1,28d" | tac)
 echo -e "\033[40m\033[1m$readme\033[0m"
 echo ""
 echo ""
