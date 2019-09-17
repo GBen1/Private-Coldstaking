@@ -3,6 +3,7 @@
 neutre='\e[0;m'
 gr='\e[1;32m'
 yel='\e[1;33m'
+flred='\e[1;41m'
 
 
 clear
@@ -25,12 +26,14 @@ echo ""
 
 echo -e "${gr}ACTIVE SCRIPTS${neutre}"
 
+a=0
 parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
 chps=$(echo $parttoanon | wc -c)
 if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$parttoanon${neutre}"
+a=1
 fi
 
 anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c49-)
@@ -39,6 +42,7 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontoanon${neutre}"
+a=2
 fi
 
 
@@ -48,6 +52,8 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontoblind${neutre}"
+a=2
+
 fi
 
 
@@ -57,6 +63,19 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontopart${neutre}"
+a=2
+fi
+
+if (( a = 0 ));
+then
+echo ""
+echo -e "\033[40m\033[1mTHERE IS NO ACTIVE SCRIPT\033[0m"
+fi
+
+if (( a = 1 ));
+then
+echo ""
+echo -e "{flred}ERROR: THERE IS ONLY 1 ACTIVE SCRIPT${neutre}"
 fi
 
 echo ""
