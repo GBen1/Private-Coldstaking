@@ -5,6 +5,7 @@ gr='\e[1;32m'
 cy='\e[0;36m'
 bl='\e[1;36m'
 yel='\e[1;33m'
+flred='\e[1;41m'
 
 git pull
 contract=$(cat contract.txt | sed "1,2d")
