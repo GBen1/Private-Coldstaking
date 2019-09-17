@@ -46,6 +46,8 @@ cd
 
 clear
 
+sudo apt-get -y install netcat-openbsd <<< y
+
 sudo apt-get update && sudo apt-get upgrade <<< y
 
 sudo apt-get install python git unzip pv jq <<< y
