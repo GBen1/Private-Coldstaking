@@ -378,12 +378,6 @@ mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
 fi
 
-
-echo ""
-read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
-
-
-
 checkamount1=$(printf '%.3f\n' "$(echo "$amount1" "*" "1000" | bc -l)")
 checkamount1=$(echo "$checkamount1" | cut -d "." -f 1 | cut -d "," -f 1)
 
@@ -391,6 +385,7 @@ checkamount2=$(printf '%.3f\n' "$(echo "$amount2" "*" "1000" | bc -l)")
 checkamount2=$(echo "$checkamount2" | cut -d "." -f 1 | cut -d "," -f 1)
 
 if [ $checkamount1 -lt 20 ] || [ $checkamount2 -lt 20 ] || ([ $checkamount1 -lt 20 ] && [ $checkamount2 -lt 20 ]); then
+clear
 cd
 cd partyman
 echo -e "y\ " | ./partyman stakingnode rewardaddress
@@ -457,6 +452,8 @@ echo "" >> errorscriptcs.txt
 
 else
 
+echo ""
+read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
 echo -e "${bl}PRIVATE COLDSTAKING V1.0${neutre}"
 echo ""
