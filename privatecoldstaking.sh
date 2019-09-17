@@ -99,7 +99,7 @@ while [[ ! "$sendto" =~ ^(private)$ ]] && [[ ! "$sendto" =~ ^(blind)$ ]] && [[ !
 do
 clear
 echo -e "${yel}Do you want to receive your anonymized coins on the public, blind, or private balance of your wallet ? ${neutre}"
-echo -e "[${gr}public${neutre}]/[${bl}blind${neutre}]/[${red}private${neutre}]"
+echo -e "[${gr}public${neutre}/${bl}blind${neutre}/${red}private${neutre}]"
 read sendto
 done
 
