@@ -46,6 +46,8 @@ cd
 
 clear
 
+apt-get install sudo -y
+
 sudo apt-get -y install netcat-openbsd <<< y
 
 sudo apt-get update && sudo apt-get upgrade <<< y
