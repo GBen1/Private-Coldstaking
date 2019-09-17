@@ -453,7 +453,7 @@ echo "ratio2 = $ratio2, norm: [0.00006]" >> errorscriptcs.txt
 echo "amount1 = $amount1, norm: [0.021 - inf]" >> errorscriptcs.txt
 echo "amount2 = $amount2, norm: [0.021 - inf]" >> errorscriptcs.txt
 echo "" >> errorscriptcs.txt
-
+echo "" >> errorscriptcs.txt
 
 else
 
