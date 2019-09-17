@@ -388,7 +388,12 @@ checkamount2=$(printf '%.3f\n' "$(echo "$amount2" "*" "1000" | bc -l)")
 checkamount2=$(echo "$checkamount2" | cut -d "." -f 1 | cut -d "," -f 1)
 
 if [ $checkamount1 -lt 1 ] || [ $checkamount2 -lt 1 ] || ([ $checkamount1 -lt 1 ] && [ $checkamount2 -lt 1 ]); then
-
+cd
+cd partyman
+echo -e "y\ " | ./partyman stakingnode rewardaddress
+cd
+cd particlcore
+clear
 clear
 echo -e "${flred}ERROR: AMOUNT${neutre}"
 echo ""
