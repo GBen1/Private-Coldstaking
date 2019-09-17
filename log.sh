@@ -5,7 +5,7 @@ clear
 cd particlcore
 [ -f  errorscriptcs.txt ] && cat  errorscriptcs.txt
 echo ""
-cat nohup.out
+tail -n 10 nohup.out 
 echo ""
-cat nohup.err
+tail -n 10 nohup.err
 echo ""
