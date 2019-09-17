@@ -444,12 +444,12 @@ date > errorscriptcs.txt
 echo "" >> errorscriptcs.txt
 echo "ERROR AMOUNT"  >> errorscriptcs.txt
 echo "" >> errorscriptcs.txt
-echo "csbal = $csbal" >> errorscriptcs.txt
-echo "entropy = $entro" >> errorscriptcs.txt
-echo "ratio1 = $ratio1" >> errorscriptcs.txt
-echo "ratio2 = $ratio2" >> errorscriptcs.txt
-echo "amount1 = $amount1" >> errorscriptcs.txt
-echo "amount2 = $amount2" >> errorscriptcs.txt
+echo "csbal = $csbal , norm: [350 - inf]" >> errorscriptcs.txt
+echo "entropy = $entro, norm: [1 - 1.5]" >> errorscriptcs.txt
+echo "ratio1 = $ratio1, norm: [0.00007]" >> errorscriptcs.txt
+echo "ratio2 = $ratio2, norm: [0.00006]" >> errorscriptcs.txt
+echo "amount1 = $amount1, norm: [0.021 - inf]" >> errorscriptcs.txt
+echo "amount2 = $amount2, norm: [0.021 - inf]" >> errorscriptcs.txt
 echo "" >> errorscriptcs.txt
 
 
