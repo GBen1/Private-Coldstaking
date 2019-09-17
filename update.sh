@@ -54,12 +54,14 @@ echo -e "${yel}$contractprivatecs${neutre}"
 echo ""
 echo -e "${gr}ACTIVE SCRIPTS${neutre}"
 
+a=0
 parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
 chps=$(echo $parttoanon | wc -c)
 if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$parttoanon${neutre}"
+a=1
 fi
 
 anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c49-)
@@ -68,6 +70,7 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontoanon${neutre}"
+a=2
 fi
 
 
@@ -77,6 +80,8 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontoblind${neutre}"
+a=2
+
 fi
 
 
@@ -86,6 +91,19 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontopart${neutre}"
+a=2
+fi
+
+if [ $a = "0" ]
+then
+echo ""
+echo -e "${flred}THERE IS NO ACTIVE SCRIPT${neutre}"
+fi
+
+if [ $a = "1" ]
+then
+echo ""
+echo -e "${flred}ERROR: THERE IS ONLY 1 ACTIVE SCRIPT${neutre}"
 fi
 
 echo ""
