@@ -69,7 +69,7 @@ fi
 if [ $a = "0" ]
 then
 echo ""
-echo -e "\033[40m\033[1mTHERE IS NO ACTIVE SCRIPT\033[0m"
+echo -e "${flred}THERE IS NO ACTIVE SCRIPT${neutre}"
 fi
 
 if [ $a = "1" ]
