@@ -390,11 +390,36 @@ checkamount1=$(echo "$checkamount1" | cut -d "." -f 1 | cut -d "," -f 1)
 checkamount2=$(printf '%.3f\n' "$(echo "$amount2" "*" "1000" | bc -l)")
 checkamount2=$(echo "$checkamount2" | cut -d "." -f 1 | cut -d "," -f 1)
 
-if [ $checkamount1 -lt 1 ] || [ $checkamount2 -lt 1 ] || ([ $checkamount1 -lt 1 ] && [ $checkamount2 -lt 1 ]); then
+if [ $checkamount1 -lt 20 ] || [ $checkamount2 -lt 20 ] || ([ $checkamount1 -lt 20 ] && [ $checkamount2 -lt 20 ]); then
 cd
 cd partyman
 echo -e "y\ " | ./partyman stakingnode rewardaddress
 cd
+
+script1=$(ps -ef | grep bash | grep script1.sh | cut -c10-14)
+num=$(echo $script1 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script1.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+script2=$(ps -ef | grep bash | grep script2.sh | cut -c10-14)
+num=$(echo $script2 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script2.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+parttoanon=$(ps -ef | grep bash | grep sendparttoanon | cut -c10-14)
+num=$(echo $parttoanon | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendparttoanon | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+anontopart=$(ps -ef | grep bash | grep anontopart | cut -c10-14)
+num=$(echo $anontopart | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontopart | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c10-14)
+num=$(echo $anontoblind | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoblind | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c10-14)
+num=$(echo $anontoanon | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoanon | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
 cd particlcore
 clear
 clear
