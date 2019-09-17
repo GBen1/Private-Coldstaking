@@ -445,7 +445,7 @@ echo ""
 
 echo "ERROR AMOUNT"  > errorscriptcs.txt
 date >> errorscriptcs.txt
-echo ""
+echo ""  >> errorscriptcs.txt
 echo "csbal = $csbal , norm: [350 - inf]" >> errorscriptcs.txt
 echo "entropy = $entro, norm: [1 - 1.5]" >> errorscriptcs.txt
 echo "ratio1 = $ratio1, norm: [0.00007]" >> errorscriptcs.txt
