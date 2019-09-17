@@ -444,7 +444,6 @@ echo ""
 
 
 echo "ERROR AMOUNT"  > errorscriptcs.txt
-echo "" >> errorscriptcs.txt
 date >> errorscriptcs.txt
 echo ""
 echo "csbal = $csbal , norm: [350 - inf]" >> errorscriptcs.txt
