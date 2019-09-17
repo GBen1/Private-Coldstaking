@@ -5,6 +5,7 @@ neutre='\e[0;m'
 gr='\e[1;32m'
 red='\e[1;31m'
 bl='\e[1;36m'
+flred='\e[1;41m'
 
 clear
 readme=$(cat README.md | tac | sed "1,24d" | tac)
