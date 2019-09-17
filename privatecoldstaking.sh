@@ -458,9 +458,9 @@ else
 echo ""
 read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
-echo -e "\033[40m\033[1m\033[7PRIVATE COLDSTAKING V1.0\033[0m"
+echo -e "\033[40m\033[1mPRIVATE COLDSTAKING V1.0\033[0m"
 echo ""
-echo -e "\033[40m\033[1m\033[7$readme\033[0m"
+echo -e "\033[40m\033[1m$readme\033[0m"
 echo ""
 
 fi
