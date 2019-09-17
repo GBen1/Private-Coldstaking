@@ -440,10 +440,11 @@ echo -e "${flred}https://discord.gg/RrkZmC4${neutre}"
 echo ""
 
 
-date > errorscriptcs.txt
+
+echo "ERROR AMOUNT"  > errorscriptcs.txt
 echo "" >> errorscriptcs.txt
-echo "ERROR AMOUNT"  >> errorscriptcs.txt
-echo "" >> errorscriptcs.txt
+date >> errorscriptcs.txt
+echo ""
 echo "csbal = $csbal , norm: [350 - inf]" >> errorscriptcs.txt
 echo "entropy = $entro, norm: [1 - 1.5]" >> errorscriptcs.txt
 echo "ratio1 = $ratio1, norm: [0.00007]" >> errorscriptcs.txt
