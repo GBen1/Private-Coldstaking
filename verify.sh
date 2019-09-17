@@ -75,7 +75,7 @@ fi
 if (( a = 1 ));
 then
 echo ""
-echo -e "{flred}ERROR: THERE IS ONLY 1 ACTIVE SCRIPT${neutre}"
+echo -e "${flred}ERROR: THERE IS ONLY 1 ACTIVE SCRIPT${neutre}"
 fi
 
 echo ""
