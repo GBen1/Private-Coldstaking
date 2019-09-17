@@ -9,6 +9,7 @@ echo "NOHUP.OUT"
 echo ""
 tail -n 10 nohup.out 
 echo ""
+echo ""
 echo "NOHUP.ERR"
 echo ""
 tail -n 10 nohup.err
