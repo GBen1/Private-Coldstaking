@@ -375,13 +375,18 @@ mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 fi
 
 
-
 echo ""
 read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 
 
 
-if [ $amount1 -lt 0.001 ] || [ $amount2 -lt 0.001 ] || ([ $amount1 -lt 0.001 ] && [ $amount2 -lt 0.001 ]); then
+checkamount1=$(printf '%.3f\n' "$(echo "$amount1" "*" "1000" | bc -l)")
+checkamount1=$(echo "$checkamount1" | cut -d "." -f 1 | cut -d "," -f 1)
+
+checkamount2=$(printf '%.3f\n' "$(echo "$amount2" "*" "1000" | bc -l)")
+checkamount2=$(echo "$checkamount2" | cut -d "." -f 1 | cut -d "," -f 1)
+
+if [ $checkamount1 -lt 1 ] || [ $checkamount2 -lt 1 ] || ([ $checkamount1 -lt 1 ] && [ $checkamount2 -lt 1 ]); then
 
 clear
 echo -e "${flred}ERROR: AMOUNT${neutre}"
