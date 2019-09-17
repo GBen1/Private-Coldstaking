@@ -9,10 +9,10 @@ flred='\e[1;41m'
 
 clear
 readme=$(cat README.md | tac | sed "1,24d" | tac)
-echo -e "\033[40m\033[1m\033[7$readme\033[0m"
+echo -e "\033[40m\033[1m$readme\033[0m"
 echo ""
 echo ""
-read -p "$(echo -e "\033[40m\033[1m\033[7 PPress [Enter] key to continue...\033[0m")"
+read -p "$(echo -e "\033[40m\033[1m Press [Enter] key to continue...\033[0m")"
 readme=$(cat README.md |  sed "1,17d")
 
 
