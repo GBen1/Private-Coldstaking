@@ -11,7 +11,8 @@ clear
 readme=$(cat README.md | tac | sed "1,24d" | tac)
 echo -e "\033[40m\033[1m\033[7$readme\033[0m"
 echo ""
-read -p "$(echo -e "\033[40m\033[1m\033[7Press [Enter] key to continue...\033[0m")"
+echo ""
+read -p "$(echo -e "\033[40m\033[1m\033[7 Press [Enter] key to continue...\033[0m")"
 readme=$(cat README.md |  sed "1,17d")
 
 
