@@ -372,16 +372,56 @@ echo ""
 
 mv contractprivatecs.txt ../Private-Coldstaking/contract.txt
 
-
 fi
+
+
 
 echo ""
 read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
+
+
+
+if [ $amount1 -eq 0 ] || [ $amount2 -eq 0 ] || ([ $amount1 -eq 0 ] && [ $amount2 -eq 0 ]); then
+
+clear
+echo -e "${flred}ERROR: AMOUNT${neutre}"
+echo ""
+echo ""
+echo -e "${flred}The script failed:${neutre}"
+echo ""
+echo -e "${flred} -Verify that bc is installed: sudo apt install bc ${neutre}"
+echo ""
+echo -e "${flred}-If you have less than 500parts currently staking on this node you should join a pool: https://coldstakingpool.com ${neutre}"
+echo ""
+echo ""
+echo -e "${flred}Help channel:${neutre}"
+echo ""
+echo -e "${flred}https://t.me/particlhelp${neutre}"
+echo -e "${flred}https://discord.gg/RrkZmC4${neutre}"
+echo ""
+
+
+date > errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+echo "ERROR AMOUNT"  >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+echo "csbal = $csbal" >> errorscriptcs.txt
+echo "entropy = $entro" >> errorscriptcs.txt
+echo "ratio1 = $ratio1" >> errorscriptcs.txt
+echo "ratio2 = $ratio2" >> errorscriptcs.txt
+echo "amount1 = $amount1" >> errorscriptcs.txt
+echo "amount2 = $amount2" >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+
+
+else
+
 clear
 echo -e "${bl}PRIVATE COLDSTAKING V1.0${neutre}"
 echo ""
 echo -e "${bl}$readme${neutre}"
 echo ""
 
+fi
 
 
