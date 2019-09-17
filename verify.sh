@@ -33,7 +33,7 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$parttoanon${neutre}"
-a=1
+a=3
 fi
 
 anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c49-)
@@ -66,7 +66,7 @@ echo -e "${yel}$anontopart${neutre}"
 a=2
 fi
 
-if (( a = 0 ));
+if (( a = 3 ));
 then
 echo ""
 echo -e "\033[40m\033[1mTHERE IS NO ACTIVE SCRIPT\033[0m"
