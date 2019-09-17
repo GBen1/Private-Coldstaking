@@ -9,10 +9,12 @@ flred='\e[1;41m'
 
 clear
 readme=$(cat README.md | tac | sed "1,24d" | tac)
-echo -e "${bl}$readme${neutre}"
+echo -e "\033[40m\033[1m\033[7$readme\033[0m"
 echo ""
-read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
+read -p "$(echo -e "\033[40m\033[1m\033[7Press [Enter] key to continue...\033[0m")"
 readme=$(cat README.md |  sed "1,17d")
+
+
 
 cd
 
@@ -455,9 +457,9 @@ else
 echo ""
 read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
-echo -e "${bl}PRIVATE COLDSTAKING V1.0${neutre}"
+echo -e "\033[40m\033[1m\033[7PRIVATE COLDSTAKING V1.0\033[0m"
 echo ""
-echo -e "${bl}$readme${neutre}"
+echo -e "\033[40m\033[1m\033[7$readme\033[0m"
 echo ""
 
 fi
