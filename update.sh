@@ -62,7 +62,7 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$parttoanon${neutre}"
-a=1
+((++a))
 fi
 
 anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c49-)
@@ -71,7 +71,7 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontoanon${neutre}"
-a=2
+((++a))
 fi
 
 
@@ -81,7 +81,7 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontoblind${neutre}"
-a=2
+((++a))
 
 fi
 
@@ -92,7 +92,7 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$anontopart${neutre}"
-a=2
+((++a))
 fi
 
 if [ $a = "0" ]
