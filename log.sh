@@ -1,6 +1,7 @@
 #!/bin/bash
 
 flred='\e[1;41m'
+neutre='\e[0;m'
 
 cd
 clear
