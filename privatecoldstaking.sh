@@ -168,7 +168,8 @@ echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 extaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev)
-if ((extaddress != 113 ));
+checkextaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev | wc -c)
+if ((checkextaddress != 113 ));
 then
 extaddress=$(./particl-cli getnewextaddress)
 fi
@@ -261,7 +262,8 @@ echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 extaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev)
-if ((extaddress != 113 ));
+checkextaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev | wc -c)
+if ((checkextaddress != 113 ));
 then
 extaddress=$(./particl-cli getnewextaddress)
 fi
@@ -355,7 +357,8 @@ echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 extaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev)
-if ((extaddress != 113 ));
+checkextaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev | wc -c)
+if ((checkextaddress != 113 ));
 then
 extaddress=$(./particl-cli getnewextaddress)
 fi
