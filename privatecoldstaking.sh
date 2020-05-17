@@ -177,7 +177,7 @@ echo -e "${yel}This is your coldstaking node public key, copy past it in your wa
 echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
 echo "" >> contractprivatecs.txt
-echo -e "${gr}$address ${neutre}"
+echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
 echo ""
