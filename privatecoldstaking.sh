@@ -87,6 +87,16 @@ checkinit=$(echo "$rewardaddress" | wc -c)
 cd && cd partyman
 done
 
+cd && cd particlcore 
+extkey=$(./particl-cli extkey account | grep PPART | wc -l)
+while [ "$extkey" -lt "6" ]
+do
+./particl-cli getnewextaddress
+extkey=$(($extkey + 1))
+done
+
+cd && cd partyman
+
 git pull
 
 clear
