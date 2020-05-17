@@ -167,20 +167,21 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-if ((csbalfin < 1 ));
+extaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev)
+if ((extaddress != 113 ));
 then
 extaddress=$(./particl-cli getnewextaddress)
+fi
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
 echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
 echo "" >> contractprivatecs.txt
-echo -e "${gr}$extaddress ${neutre}"
+echo -e "${gr}$address ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-fi
 echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}"
 echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
@@ -259,9 +260,11 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-if ((csbalfin < 1 ));
+extaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev)
+if ((extaddress != 113 ));
 then
 extaddress=$(./particl-cli getnewextaddress)
+fi
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
 echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
@@ -272,7 +275,6 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-fi
 echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}" 
 echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
@@ -352,9 +354,11 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-if ((csbalfin < 1 ));
+extaddress=$(./particl-cli  extkey account | tail -n 15 | grep PPART | cut -c17- | rev | cut -c3- | rev)
+if ((extaddress != 113 ));
 then
 extaddress=$(./particl-cli getnewextaddress)
+fi
 echo -e "${yel}This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:${neutre}"
 echo "This is your coldstaking node public key, copy past it in your wallet to initialize the coldstaking smartcontract:" >> contractprivatecs.txt
 echo ""
@@ -365,7 +369,6 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-fi
 echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}"
 echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
