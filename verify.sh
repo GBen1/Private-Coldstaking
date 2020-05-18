@@ -66,16 +66,25 @@ echo -e "${yel}$anontopart${neutre}"
 ((++a))
 fi
 
+autoupdate=$(ps -ef | grep bash | grep "partyman update" | cut -c49-)
+chps=$(echo $autoupdate| wc -c)
+if ((chps > 1 ));
+then
+echo ""
+echo -e "${yel}$autoupdate${neutre}"
+((++a))
+fi
+
 if [ $a = "0" ]
 then
 echo ""
-echo -e "${flred}THERE IS NO ACTIVE SCRIPT${neutre}"
+echo -e "${flred}THERE IS NO PC ACTIVE SCRIPT${neutre}"
 fi
 
 if [ $a = "1" ]
 then
 echo ""
-echo -e "${flred}ERROR: THERE IS ONLY 1 ACTIVE SCRIPT${neutre}"
+echo -e "${flred}ERROR: THERE IS ONLY 1 PC ACTIVE SCRIPT${neutre}"
 fi
 
 echo ""
