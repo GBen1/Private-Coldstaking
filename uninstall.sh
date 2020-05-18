@@ -25,6 +25,14 @@ anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c10-14)
 num=$(echo $anontoanon | wc -w)
 x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoanon | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
+script3=$(ps -ef | grep bash | grep script3.sh | cut -c10-14)
+num=$(echo $script3 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+update=$(ps -ef | grep bash | grep "partyman update" | cut -c10-14)
+num=$(echo $script3 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
 cd particlcore
 rm wallet.txt
 rm stealthaddressnode.txt
