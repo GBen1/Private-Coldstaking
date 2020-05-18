@@ -43,6 +43,14 @@ anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c10-14)
 num=$(echo $anontoanon | wc -w)
 x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoanon | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
+script3=$(ps -ef | grep bash | grep script3.sh | cut -c10-14)
+num=$(echo $script3 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+update=$(ps -ef | grep bash | grep "partyman update" | cut -c10-14)
+num=$(echo $script3 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
 cd particlcore
 rm wallet.txt
 rm stealthaddressnode.txt
@@ -122,6 +130,20 @@ do
 ./particl-cli getnewextaddress
 extkey=$(($extkey + 1))
 done
+
+while [[ ! "$yesno" =~ ^(yes)$ ]] && [[ ! "$yesno" =~ ^(no)$ ]] && [[ ! "$yesno" =~ ^(y)$ ]] && [[ ! "$yesno" =~ ^(n)$ ]]
+do
+clear
+echo -e "${yel}Do you want to update your node automatically every 12 hours ? ${neutre}"
+echo -e "[${gr}yes${neutre}/${red}no${neutre}]"
+read yesno
+done
+
+if [ $yesno = "yes" ] || [ $yesno = "y" ]
+then
+echo "bash -c 'while true;do cd && cd Private-Coldstaking && git pull && cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
+nohup bash script3.sh </dev/null >nohup.out 2>nohup.err &
+fi
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
 
@@ -226,6 +248,20 @@ do
 extkey=$(($extkey + 1))
 done
 
+while [[ ! "$yesno" =~ ^(yes)$ ]] && [[ ! "$yesno" =~ ^(no)$ ]] && [[ ! "$yesno" =~ ^(y)$ ]] && [[ ! "$yesno" =~ ^(n)$ ]]
+do
+clear
+echo -e "${yel}Do you want to update your node automatically every 12 hours ? ${neutre}"
+echo -e "[${gr}yes${neutre}/${red}no${neutre}]"
+read yesno
+done
+
+if [ $yesno = "yes" ] || [ $yesno = "y" ]
+then
+echo "bash -c 'while true;do cd && cd Private-Coldstaking && git pull && cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
+nohup bash script3.sh </dev/null >nohup.out 2>nohup.err &
+fi
+
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
 
 stealthaddressnode=$(./particl-cli getnewstealthaddress) 
@@ -325,6 +361,20 @@ do
 ./particl-cli getnewextaddress
 extkey=$(($extkey + 1))
 done
+
+while [[ ! "$yesno" =~ ^(yes)$ ]] && [[ ! "$yesno" =~ ^(no)$ ]] && [[ ! "$yesno" =~ ^(y)$ ]] && [[ ! "$yesno" =~ ^(n)$ ]]
+do
+clear
+echo -e "${yel}Do you want to update your node automatically every 12 hours ? ${neutre}"
+echo -e "[${gr}yes${neutre}/${red}no${neutre}]"
+read yesno
+done
+
+if [ $yesno = "yes" ] || [ $yesno = "y" ]
+then
+echo "bash -c 'while true;do cd && cd Private-Coldstaking && git pull && cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
+nohup bash script3.sh </dev/null >nohup.out 2>nohup.err &
+fi
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
 
@@ -454,6 +504,14 @@ x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoblind 
 anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c10-14)
 num=$(echo $anontoanon | wc -w)
 x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep sendanontoanon | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+script3=$(ps -ef | grep bash | grep script3.sh | cut -c10-14)
+num=$(echo $script3 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+
+update=$(ps -ef | grep bash | grep "partyman update" | cut -c10-14)
+num=$(echo $script3 | wc -w)
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
 cd particlcore
 clear
