@@ -49,7 +49,7 @@ x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut
 
 update=$(ps -ef | grep bash | grep "partyman update" | cut -c10-14)
 num=$(echo $update | wc -w)
-x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep "partyman update" | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
 cd particlcore
 rm wallet.txt
@@ -520,7 +520,7 @@ x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut
 
 update=$(ps -ef | grep bash | grep "partyman update" | cut -c10-14)
 num=$(echo $update | wc -w)
-x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep script3.sh | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
+x=1; while [ $x -le $num ]; do kill=$(ps -ef | grep bash | grep "partyman update" | cut -c10-14 | sed -n "1p") && sudo kill -9 $kill $(( x++ )); done
 
 cd particlcore
 clear
