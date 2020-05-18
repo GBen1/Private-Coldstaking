@@ -87,15 +87,7 @@ checkinit=$(echo "$rewardaddress" | wc -c)
 cd && cd partyman
 done
 
-cd && cd particlcore 
-extkey=$(./particl-cli extkey account | grep PPART | wc -l)
-while [ "$extkey" -lt "6" ]
-do
-./particl-cli getnewextaddress
-extkey=$(($extkey + 1))
-done
 
-cd && cd partyman
 
 git pull
 
@@ -122,6 +114,13 @@ clear
 cd && cd particlcore  
 echo -e "${yel}Enter a public address generated from your Desktop/Qt/Copay wallet, this address will be the reception address for your anonymized rewards:${neutre}" && read wallet
 numcharaddress=$(echo "$wallet" | wc -c)
+done
+
+extkey=$(./particl-cli extkey account | grep PPART | wc -l)
+while [ "$extkey" -lt "6" ]
+do
+./particl-cli getnewextaddress
+extkey=$(($extkey + 1))
 done
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
@@ -220,6 +219,13 @@ cd && cd particlcore && echo -e "${yel}Enter a private address (stealth address)
 numcharaddress=$(echo "$wallet" | wc -c)
 done
 
+extkey=$(./particl-cli extkey account | grep PPART | wc -l)
+while [ "$extkey" -lt "6" ]
+do
+./particl-cli getnewextaddress
+extkey=$(($extkey + 1))
+done
+
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
 
 stealthaddressnode=$(./particl-cli getnewstealthaddress) 
@@ -311,6 +317,13 @@ do
 clear
 cd && cd particlcore && echo -e "${yel}Enter a private address (stealth address) generated from your Desktop/Qt wallet, this address will be the reception address for your coldstaking rewards:${neutre}" && read wallet
 numcharaddress=$(echo "$wallet" | wc -c)
+done
+
+extkey=$(./particl-cli extkey account | grep PPART | wc -l)
+while [ "$extkey" -lt "6" ]
+do
+./particl-cli getnewextaddress
+extkey=$(($extkey + 1))
 done
 
 ./particl-cli walletsettings stakingoptions "{\"rewardaddress\":\"$rewardaddress\"}"
