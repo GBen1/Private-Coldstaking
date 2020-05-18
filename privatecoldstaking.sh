@@ -81,20 +81,22 @@ rewardaddress=$(./particl-cli getnewaddress)
 checkinit=$(echo "$rewardaddress" | wc -c)  
 cd && cd partyman
 
-while [ "$checkinit" != "35" ]
-do
-cd partyman/
+if [ "$checkinit" != "35" ]
+then
 clear
 yes | ./partyman install
 clear
 ./partyman restart now
-./partyman stakingnode init
+while [ "$checkinit" != "35" ]
+do
 clear
+./partyman stakingnode init
 cd && cd particlcore 
 rewardaddress=$(./particl-cli getnewaddress) 
 checkinit=$(echo "$rewardaddress" | wc -c)  
 cd && cd partyman
 done
+fi
 
 
 
