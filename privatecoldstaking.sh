@@ -78,7 +78,7 @@ cd ~ && git clone https://github.com/dasource/partyman
 cd && cd partyman
 
 checkpartyman=$(./partyman status | wc -l)
-while [ "$checkpartyman" -lt "1" ]
+while [ "$checkpartyman" -lt "10 ]
 do
 clear
 
@@ -88,7 +88,7 @@ clear
 
 ./partyman restart now
 
-checkpartyman=$(./partyman status | wc -c)
+checkpartyman=$(./partyman status | wc -l)
 done
 
 
