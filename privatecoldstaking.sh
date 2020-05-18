@@ -75,8 +75,11 @@ sudo apt install bc <<< y
 
 cd ~ && git clone https://github.com/dasource/partyman
 
-cd partyman/
+cd && cd partyman
 
+checkpartyman=$(./partyman status | wc -c)
+while [ "$checkpartyman" < "1" ]
+do
 clear
 
 yes | ./partyman install
@@ -84,6 +87,11 @@ yes | ./partyman install
 clear
 
 ./partyman restart now
+
+checkpartyman=$(./partyman status | wc -c)
+done
+
+
 
 while [ "$checkinit" != "35" ]
 do
