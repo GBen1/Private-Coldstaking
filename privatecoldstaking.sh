@@ -73,24 +73,27 @@ sudo apt-get install python git unzip pv jq dnsutils <<< y
 
 sudo apt install bc <<< y
 
+cd ~ && git clone https://github.com/dasource/partyman
 
-while [ "$checkinit" != "35" ]
-do
 clear
 cd && cd particlcore 
 rewardaddress=$(./particl-cli getnewaddress) 
 checkinit=$(echo "$rewardaddress" | wc -c)  
 cd && cd partyman
-if [ "$checkinit" != "35" ]
-then
-cd ~ && git clone https://github.com/dasource/partyman
+
+while [ "$checkinit" != "35" ]
+do
 cd partyman/
 clear
 yes | ./partyman install
 clear
 ./partyman restart now
 ./partyman stakingnode init
-fi
+clear
+cd && cd particlcore 
+rewardaddress=$(./particl-cli getnewaddress) 
+checkinit=$(echo "$rewardaddress" | wc -c)  
+cd && cd partyman
 done
 
 
