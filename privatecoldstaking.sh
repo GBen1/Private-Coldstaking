@@ -141,7 +141,7 @@ done
 
 if [ $yesno = "yes" ] || [ $yesno = "y" ]
 then
-echo "bash -c 'while true;do cd && cd Private-Coldstaking && git pull && cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
+echo "bash -c 'while true;do cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
 nohup bash script3.sh </dev/null >nohup.out 2>nohup.err &
 fi
 
@@ -258,7 +258,7 @@ done
 
 if [ $yesno = "yes" ] || [ $yesno = "y" ]
 then
-echo "bash -c 'while true;do cd && cd Private-Coldstaking && git pull && cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
+echo "bash -c 'while true;do cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
 nohup bash script3.sh </dev/null >nohup.out 2>nohup.err &
 fi
 
@@ -372,7 +372,7 @@ done
 
 if [ $yesno = "yes" ] || [ $yesno = "y" ]
 then
-echo "bash -c 'while true;do cd && cd Private-Coldstaking && git pull && cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
+echo "bash -c 'while true;do cd && cd partyman && git pull && yes | ./partyman update; sleep 43200s; done'" > script3.sh
 nohup bash script3.sh </dev/null >nohup.out 2>nohup.err &
 fi
 
