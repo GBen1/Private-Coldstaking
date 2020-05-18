@@ -72,7 +72,6 @@ if ((chps > 1 ));
 then
 echo ""
 echo -e "${yel}$autoupdate${neutre}"
-((++a))
 fi
 
 if [ $a = "0" ]
