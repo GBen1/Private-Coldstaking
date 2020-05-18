@@ -75,18 +75,16 @@ sudo apt install bc <<< y
 
 cd ~ && git clone https://github.com/dasource/partyman
 
-clear
-cd && cd particlcore 
-rewardaddress=$(./particl-cli getnewaddress) 
-checkinit=$(echo "$rewardaddress" | wc -c)  
-cd && cd partyman
+cd partyman/
 
-if [ "$checkinit" != "35" ]
-then
 clear
+
 yes | ./partyman install
+
 clear
+
 ./partyman restart now
+
 while [ "$checkinit" != "35" ]
 do
 clear
@@ -96,9 +94,16 @@ rewardaddress=$(./particl-cli getnewaddress)
 checkinit=$(echo "$rewardaddress" | wc -c)  
 cd && cd partyman
 done
-fi
 
+cd && cd particlcore 
+extkey=$(./particl-cli extkey account | grep PPART | wc -l)
+while [ "$extkey" -lt "6" ]
+do
+./particl-cli getnewextaddress
+extkey=$(($extkey + 1))
+done
 
+cd && cd partyman
 
 git pull
 
