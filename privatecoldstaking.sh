@@ -82,17 +82,33 @@ cd ~ && git clone https://github.com/dasource/partyman
 cd && cd partyman
 
 checkpartyman=$(./partyman status | wc -l)
+a=0
 while [ "$checkpartyman" -lt "10" ]
 do
-clear
 
+clear
 yes | ./partyman install
-
 clear
-
 ./partyman restart now
-
 checkpartyman=$(./partyman status | wc -l)
+((++a))
+
+if [ $a = "5" ]
+then
+clear
+cd
+cd particlcore
+./particl-cli stop
+echo -e "${flred}ERROR: PARTYMAN INSTALL/RESTART FAILED${neutre}" >> errorscriptcs.txt
+date >> errorscriptcs.txt
+echo ""  >> errorscriptcs.txt
+echo "Thanks to close any other partyman session on this vps/rpi and try again" >> errorscriptcs.txt
+echo "Thanks to verify that ./partyman status display more than 10lines and that partyman is working correctly" >> errorscriptcs.txt
+cd
+cd Private-Coldstaking 
+bash log.sh
+exit
+fi
 done
 
 
@@ -561,7 +577,7 @@ echo ""
 
 
 
-echo "ERROR AMOUNT"  > errorscriptcs.txt
+echo "ERROR AMOUNT"  >> errorscriptcs.txt
 date >> errorscriptcs.txt
 echo ""  >> errorscriptcs.txt
 echo "csbal = $csbal , norm: [350 - inf]" >> errorscriptcs.txt
