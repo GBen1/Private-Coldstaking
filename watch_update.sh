@@ -12,6 +12,12 @@ contract=$(cat contract.txt | sed "1,2d")
 cd
 cd partyman
 clear
+git pull
+clear
+yes | ./partyman update
+echo ""
+sleep 10
+clear
 ./partyman status
 sleep 20
 clear
