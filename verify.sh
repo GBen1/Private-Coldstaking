@@ -5,13 +5,21 @@ gr='\e[1;32m'
 yel='\e[1;33m'
 flred='\e[1;41m'
 
+sudo apt install python-pip <<< y
+
+sudo pip install qrcode[pil] <<< y
 
 clear
-contract=$(cat contract.txt | sed "1,2d")
+clear
+
+contract1=$(cat contract.txt | sed "1,2d" | tac | tail -n 5 | tac)
+contract2=$(cat contract.txt | sed "1,7d" )
+nodekey=$(cat contract.txt | sed "1,2d" | tac | tail -n 5 | tac | grep PPART)
+
 
 cd
 cd particlcore
-[ -f contractprivatecs.txt ] && contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d") 
+[ -f contractprivatecs.txt ] && contractprivatecs1=$(cat contractprivatecs.txt | sed "1,2d" | tac | tail -n 5 | tac)  && contractprivatecs2=$(cat contractprivatecs.txt | sed "1,7d" ) && nodekeycs=$(cat contractprivatecs.txt | sed "1,2d" | tac | tail -n 5 | tac | grep PPART)
 csb=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44 | cut -d "." -f 1 | cut -d "," -f 1)
 clear
 clear
@@ -20,9 +28,24 @@ echo ""
 echo -e "${yel}$csb PARTS${neutre}"
 echo ""
 echo -e "${gr}PRIVATE COLDSTAKING CONTRACT${neutre}"
-echo -e "${yel}$contract${neutre}"
-echo -e "${yel}$contractprivatecs${neutre}"
+echo -e "${yel}$contract1${neutre}"
+echo -e "${yel}$contractprivatecs1${neutre}"
 echo ""
+
+checknodekey=$($nodekey | wc -c)
+if [[ "$checknodekey" -eq 113 ]] ;
+then
+qr --error-correction=L $nodekey
+fi
+
+checknodekeycs=$($nodekeycs | wc -c)
+if [[ "$checknodekeycs" -eq 113 ]] ;
+then
+qr --error-correction=L $nodekeycs
+fi
+
+echo -e "${yel}$contract2${neutre}"
+echo -e "${yel}$contractprivatecs2${neutre}"
 
 echo -e "${gr}ACTIVE SCRIPTS${neutre}"
 
