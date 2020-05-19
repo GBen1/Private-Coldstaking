@@ -95,6 +95,14 @@ echo -e "${yel}$anontopart${neutre}"
 ((++a))
 fi
 
+autoupdate=$(ps -ef | grep bash | grep "partyman update" | cut -c49-)
+chps=$(echo $autoupdate| wc -c)
+if ((chps > 1 ));
+then
+echo ""
+echo -e "${yel}$autoupdate${neutre}"
+fi
+
 if [ $a = "0" ]
 then
 echo ""
