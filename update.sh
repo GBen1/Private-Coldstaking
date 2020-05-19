@@ -28,12 +28,17 @@ cd
 cd particlcore
 [ -f contractprivatecs.txt ] && contractprivatecs=$(cat contractprivatecs.txt | sed "1,2d") 
 csb=$(./particl-cli getcoldstakinginfo | grep coin_in_cold | cut -c35-44 | cut -d "." -f 1 | cut -d "," -f 1)
+var=$(./particl-cli getstakinginfo | grep expected | cut -c18-)
+var=$(echo $var|nawk '{printf "%02d h %02d m %02d s \n",$1/3600,$1%3600/60,$1%60}')
 clear
 clear
 echo -e "${gr}COLDSTAKING BALANCE${neutre}"
 echo ""
 echo -e "${yel}$csb PARTS${neutre}"
 echo ""
+echo -e "${gr}NEXT REWARD (EXPECTED)${neutre}"
+echo ""
+echo -e "${yel}$var${neutre}"
 echo ""
 echo -e "${gr}NODE BALANCES${neutre}"
 echo ""
