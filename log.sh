@@ -6,7 +6,7 @@ flred='\e[1;41m'
 cd
 clear
 cd particlcore
-[ -f  errorscriptcs.txt ] && cat  errorscriptcs.txt
+[ -f  errorscriptcs.txt ] && cat  errorscriptcs.txt && echo "" && echo ""
 echo -e "${flred}NOHUP.OUT${neutre}"
 echo ""
 tail -n 10 nohup.out 
