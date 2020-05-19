@@ -193,7 +193,10 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendp
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendanontopart $wallet $amount2; sleep $[$RANDOM+1]s; done'" > script2.sh
 
 time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time1X=$(echo $time1|nawk '{printf "%02d h %02d m %02d s \n",$1/3600,$1%3600/60,$1%60}')
+
 time2=$(cat script2.sh | cut -c120- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time2X=$(echo $time2|nawk '{printf "%02d h %02d m %02d s \n",$1/3600,$1%3600/60,$1%60}')
 
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 clear
@@ -222,15 +225,15 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}"
-echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time1X${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}"
+echo "Every $time1X, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
 echo "" >> contractprivatecs.txt
 echo ""
-echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to this public address: ${neutre}${gr}$wallet${neutre}"
+echo -e "${yel}Every${neutre}${gr} $time2X${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to this public address: ${neutre}${gr}$wallet${neutre}"
 echo ""
 echo "" >> contractprivatecs.txt
-echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance of your node to this public address: $wallet" >> contractprivatecs.txt
+echo "Every $time2X, the node is going to send you back $amount2 parts from the available anon balance of your node to this public address: $wallet" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 echo ""
 
@@ -308,8 +311,11 @@ amount2=$(printf '%.3f\n' "$(echo "$csbal" "*" "$ratio2" "*" "$entro" | bc -l)")
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendparttoanon  $stealthaddressnode $amount1; sleep $[$RANDOM+1]s; done' " > script1.sh
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendanontoanon $wallet $amount2; sleep $[$RANDOM+1]s; done' " > script2.sh
 
-time1=$(cat script1.sh | cut -c189- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
-time2=$(cat script2.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time1X=$(echo $time1|nawk '{printf "%02d h %02d m %02d s \n",$1/3600,$1%3600/60,$1%60}')
+
+time2=$(cat script2.sh | cut -c120- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time2X=$(echo $time2|nawk '{printf "%02d h %02d m %02d s \n",$1/3600,$1%3600/60,$1%60}')
 
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 clear
@@ -338,14 +344,14 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}" 
-echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time1X${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}" 
+echo "Every $time1X, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to the anon balance of your wallet.${neutre}" 
-echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance of your node to the blind balance of your wallet." >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time2X${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to the anon balance of your wallet.${neutre}" 
+echo "Every $time2X, the node is going to send you back $amount2 parts from the available anon balance of your node to the blind balance of your wallet." >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 echo ""
 
@@ -425,7 +431,10 @@ echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendp
 echo "bash -c 'while true;do ./particl-cli settxfee 0.002 && ./particl-cli sendanontoblind $wallet $amount2; sleep $[$RANDOM+1]s; done'" > script2.sh
 
 time1=$(cat script1.sh | cut -c188- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
-time2=$(cat script2.sh | cut -c189- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time1X=$(echo $time1|nawk '{printf "%02d h %02d m %02d s \n",$1/3600,$1%3600/60,$1%60}')
+
+time2=$(cat script2.sh | cut -c120- | rev | cut -d "p" -f 1 | rev | cut -d ";" -f 1 | cut -c2- | cut -d "s" -f 1)
+time2X=$(echo $time2|nawk '{printf "%02d h %02d m %02d s \n",$1/3600,$1%3600/60,$1%60}')
 
 nohup bash script1.sh & nohup bash script2.sh </dev/null >nohup.out 2>nohup.err &
 clear
@@ -454,14 +463,14 @@ echo ""
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-echo -e "${yel}Every${neutre}${gr} $time1 seconds${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}"
-echo "Every $time1 seconds, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
+echo -e "${yel}Every${neutre}${gr} $time1X${neutre}${yel}, the node is going to anonymize${neutre}${gr} $amount1 parts${neutre}${yel} from your available coldstaking rewards on this address: ${neutre}${gr}$rewardaddress${neutre}${yel} to the anon balance of your node.${neutre}"
+echo "Every $time1X, the node is going to anonymize $amount1 parts from your available coldstaking rewards on this address: $rewardaddress to the anon balance of your node." >> contractprivatecs.txt
 echo ""
 echo ""
-echo -e "${yel}Every${neutre}${gr} $time2 seconds${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to the blind balance of your wallet.${neutre}" 
+echo -e "${yel}Every${neutre}${gr} $time2X${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to the blind balance of your wallet.${neutre}" 
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
-echo "Every $time2 seconds, the node is going to send you back $amount2 parts from the available anon balance of your node to the blind balance of your wallet." >> contractprivatecs.txt
+echo "Every $time2X, the node is going to send you back $amount2 parts from the available anon balance of your node to the blind balance of your wallet." >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 echo ""
 
