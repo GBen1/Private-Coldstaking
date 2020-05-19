@@ -73,6 +73,10 @@ sudo apt-get install python git unzip pv jq dnsutils <<< y
 
 sudo apt install bc <<< y
 
+sudo apt install python-pip <<< y
+
+sudo pip install qrcode[pil] <<< y
+
 cd ~ && git clone https://github.com/dasource/partyman
 
 cd && cd partyman
@@ -222,6 +226,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
+qr --error-correction=L $extaddress
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
@@ -341,6 +346,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
+qr --error-correction=L $extaddress
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
@@ -460,6 +466,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
+qr --error-correction=L $extaddress
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
