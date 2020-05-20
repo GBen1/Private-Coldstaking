@@ -81,6 +81,10 @@ cd ~ && git clone https://github.com/dasource/partyman
 
 cd && cd partyman
 
+yes | ./partyman install
+
+yes | ./partyman restart now
+
 checkpartyman=$(./partyman status | grep YES | wc -c)
 
 if [[ "$checkpartyman" -lt 1 ]] ; then
