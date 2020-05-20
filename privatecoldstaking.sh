@@ -107,8 +107,8 @@ echo "" >> errorscriptcs.txt
 echo "" >> errorscriptcs.txt
 echo -e "${flred}Help channel:${neutre}" >> errorscriptcs.txt
 echo "" >> errorscriptcs.txt
-echo -e "${flred}https://t.me/particlhelp${neutre}" >> errorscriptcs.txt
-echo -e "${flred}https://discord.gg/RrkZmC4${neutre}" >> errorscriptcs.txt
+echo -e "https://t.me/particlhelp" >> errorscriptcs.txt
+echo -e "https://discord.gg/RrkZmC4" >> errorscriptcs.txt
 echo "" >> errorscriptcs.txt
 cd
 cd Private-Coldstaking
