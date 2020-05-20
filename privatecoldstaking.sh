@@ -81,36 +81,22 @@ cd ~ && git clone https://github.com/dasource/partyman
 
 cd && cd partyman
 
-checkpartyman=$(./partyman status | wc -l)
-a=0
-while [ "$checkpartyman" -lt "10" ]
-do
+checkpartyman=$(./partyman status | grep YES | wc -c)
 
-clear
-yes | ./partyman install
-clear
-./partyman restart now
-checkpartyman=$(./partyman status | wc -l)
-((++a))
-
-if [ $a = "5" ]
-then
-clear
+if [[ "$checkpartyman" -lt 1 ]] ; then
 cd
 cd particlcore
 ./particl-cli stop
 echo -e "${flred}ERROR: PARTYMAN INSTALL/RESTART FAILED${neutre}" >> errorscriptcs.txt
 date >> errorscriptcs.txt
 echo ""  >> errorscriptcs.txt
-echo "Thanks to close any other partyman session on this vps/rpi and try again" >> errorscriptcs.txt
-echo "Thanks to verify that ./partyman status display more than 10lines and that partyman is working correctly" >> errorscriptcs.txt
+echo " - Thanks to close any other partyman session on this vps/rpi and try again" >> errorscriptcs.txt
+echo " - Thanks to verify that ./particld is up and running and that partyman is working correctly" >> errorscriptcs.txt
 cd
-cd Private-Coldstaking 
+cd Private-Coldstaking
 bash log.sh
 exit
 fi
-done
-
 
 
 while [ "$checkinit" != "35" ]
