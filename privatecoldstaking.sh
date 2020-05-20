@@ -83,6 +83,8 @@ cd && cd partyman
 
 yes | ./partyman install
 
+clear
+
 yes | ./partyman restart now
 
 checkpartyman=$(./partyman status | grep YES | wc -c)
@@ -94,8 +96,18 @@ cd particlcore
 echo -e "${flred}ERROR: PARTYMAN INSTALL/RESTART FAILED${neutre}" >> errorscriptcs.txt
 date >> errorscriptcs.txt
 echo ""  >> errorscriptcs.txt
-echo " - Thanks to close any other partyman session on this vps/rpi and try again" >> errorscriptcs.txt
-echo " - Thanks to verify that ./particld is up and running and that partyman is working correctly" >> errorscriptcs.txt
+echo " - Close any other partyman session on this vps/rpi and try again" >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+echo " - Verify that ./particld is up and running and that partyman is working correctly" >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+echo " - We are maybe working on this repository currently, thanks to try again latter" >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+echo -e "${flred}Help channel:${neutre}" >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
+echo -e "${flred}https://t.me/particlhelp${neutre}" >> errorscriptcs.txt
+echo -e "${flred}https://discord.gg/RrkZmC4${neutre}" >> errorscriptcs.txt
+echo "" >> errorscriptcs.txt
 cd
 cd Private-Coldstaking
 bash log.sh
