@@ -77,6 +77,8 @@ sudo apt install python-pip <<< y
 
 sudo pip install qrcode[pil] <<< y
 
+clear
+
 cd ~ && git clone https://github.com/dasource/partyman
 
 cd && cd partyman
