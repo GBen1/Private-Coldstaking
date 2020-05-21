@@ -5,13 +5,7 @@ gr='\e[1;32m'
 yel='\e[1;33m'
 flred='\e[1;41m'
 
-clear
 
-sudo apt install python-pip <<< y
-
-sudo pip install qrcode[pil] <<< y
-
-clear
 clear
 
 contract1=$(cat contract.txt | sed "1,2d" | tac | tail -n 5 | tac)
