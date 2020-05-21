@@ -219,7 +219,7 @@ ratio1=0.00007
 ratio2=0.00006
 
 entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
-entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
+entro=$(printf '%.3f\n' "$(echo "$entro" | sed 's/','/./' | bc -l)")
 entro=$(printf '%.3f\n' "$(echo "$entro" "*" "1000" | bc -l)")
 entro=$(printf '%.3f\n' "$(echo "$entro" "+" "1000" | bc -l)")
 entro=$(echo "$entro" | cut -d "." -f 1 | cut -d "," -f 1)
@@ -341,7 +341,7 @@ ratio1=0.00007
 ratio2=0.00006
 
 entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
-entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
+entro=$(printf '%.3f\n' "$(echo "$entro" | sed 's/','/./' | bc -l)")
 entro=$(printf '%.3f\n' "$(echo "$entro" "*" "1000" | bc -l)")
 entro=$(printf '%.3f\n' "$(echo "$entro" "+" "1000" | bc -l)")
 entro=$(echo "$entro" | cut -d "." -f 1 | cut -d "," -f 1)
@@ -459,7 +459,7 @@ ratio1=0.00007
 ratio2=0.00006
 
 entro=$(awk -v seed="$RANDOM" 'BEGIN { srand(seed);  printf("%.4f\n", rand()) }')
-entro=$(printf '%.3f\n' "$(echo "$entro" | bc -l)")
+entro=$(printf '%.3f\n' "$(echo "$entro" | sed 's/','/./' | bc -l)")
 entro=$(printf '%.3f\n' "$(echo "$entro" "*" "1000" | bc -l)")
 entro=$(printf '%.3f\n' "$(echo "$entro" "+" "1000" | bc -l)")
 entro=$(echo "$entro" | cut -d "." -f 1 | cut -d "," -f 1)
