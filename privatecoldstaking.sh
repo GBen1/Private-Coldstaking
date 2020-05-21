@@ -91,6 +91,9 @@ sudo pip install qrcode[pil] <<< y
 
 sudo apt install python-qrcode <<< y
 
+sudo apt install python3-qrcode <<< y
+
+
 clear
 
 echo "_________________________________________________________"
