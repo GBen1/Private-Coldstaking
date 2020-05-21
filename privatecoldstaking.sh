@@ -82,6 +82,8 @@ sudo apt install python-pip <<< y
 
 sudo pip install qrcode[pil] <<< y
 
+sudo apt install python-qrcode <<< y
+
 clear
 
 echo "_________________________________________________________"
@@ -261,7 +263,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
-qr --error-correction=L $extaddress
+qr $extaddress
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
@@ -381,7 +383,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
-qr --error-correction=L $extaddress
+qr $extaddress
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
@@ -501,7 +503,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
-qr --error-correction=L $extaddress
+qr $extaddress
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
