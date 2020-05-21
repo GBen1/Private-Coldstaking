@@ -7,6 +7,8 @@ red='\e[1;31m'
 bl='\e[1;36m'
 flred='\e[1;41m'
 
+# print few first lines of readme.md
+
 clear
 readme=$(cat README.md | tac | sed "1,24d" | tac)
 echo -e "\033[40m\033[1m$readme\033[0m"
@@ -15,9 +17,9 @@ echo ""
 read -p "$(echo -e "\033[40m\033[1m Press [Enter] key to continue...\033[0m")"
 readme=$(cat README.md |  sed "1,16d")
 
-
-
 cd
+
+# kill running scripts first..
 
 script1=$(ps -ef | grep bash | grep script1.sh | cut -c10-14)
 num=$(echo $script1 | wc -w)
