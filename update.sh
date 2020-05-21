@@ -61,7 +61,7 @@ echo ""
 echo -e "${gr}ACTIVE SCRIPTS${neutre}"
 
 a=0
-parttoanon=$(ps -ef | grep bash | grep parttoanon | cut -c49-)
+parttoanon=$(ps -ef | grep bash | grep parttoanon |  sed 's/.*bash -c//')
 chps=$(echo $parttoanon | wc -c)
 if ((chps > 1 ));
 then
@@ -70,7 +70,7 @@ echo -e "${yel}$parttoanon${neutre}"
 ((++a))
 fi
 
-anontoanon=$(ps -ef | grep bash | grep anontoanon | cut -c49-)
+anontoanon=$(ps -ef | grep bash | grep anontoanon |  sed 's/.*bash -c//')
 chps=$(echo $anontoanon | wc -c)
 if ((chps > 1 ));
 then
@@ -80,7 +80,7 @@ echo -e "${yel}$anontoanon${neutre}"
 fi
 
 
-anontoblind=$(ps -ef | grep bash | grep anontoblind | cut -c49-)
+anontoblind=$(ps -ef | grep bash | grep anontoblind |  sed 's/.*bash -c//')
 chps=$(echo $anontoblind | wc -c)
 if ((chps > 1 ));
 then
@@ -91,7 +91,7 @@ echo -e "${yel}$anontoblind${neutre}"
 fi
 
 
-anontopart=$(ps -ef | grep bash | grep anontopart | cut -c49-)
+anontopart=$(ps -ef | grep bash | grep anontopart |  sed 's/.*bash -c//')
 chps=$(echo $anontopart| wc -c)
 if ((chps > 1 ));
 then
@@ -100,7 +100,7 @@ echo -e "${yel}$anontopart${neutre}"
 ((++a))
 fi
 
-autoupdate=$(ps -ef | grep bash | grep "partyman update" | cut -c49-)
+autoupdate=$(ps -ef | grep bash | grep "partyman update" | sed 's/.*bash -c//')
 chps=$(echo $autoupdate| wc -c)
 if ((chps > 1 ));
 then
