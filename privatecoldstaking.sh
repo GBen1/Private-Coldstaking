@@ -66,25 +66,10 @@ echo ""
 echo ":: Updating repos, packages and installing dependencies.."
 echo ""
 
-apt install bc <<< y
-
 apt-get install sudo -y
-
-sudo apt-get -y install netcat-openbsd <<< y
-
-sudo apt-get update && sudo apt-get upgrade <<< y
-
-sudo apt-get install python git unzip pv jq <<< y
-
-sudo apt-get install python git unzip pv jq dnsutils <<< y
-
-sudo apt install bc <<< y
-
-sudo apt install python-pip <<< y
-
-sudo pip install qrcode[pil] <<< y
-
-sudo apt install python-qrcode <<< y
+sudo apt update -y && sudo apt -y upgrade
+sudo apt install -y netcat-openbsd python git unzip pv jq dnsutils bc python-pip python-qrcode
+sudo pip install qrcode[pil]
 
 clear
 
