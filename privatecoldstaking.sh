@@ -59,6 +59,11 @@ cd
 
 clear
 
+echo "_________________________________________________________"
+echo ""
+echo ":: Updating repos, packages and installing dependencies.."
+echo ""
+
 apt install bc <<< y
 
 apt-get install sudo -y
@@ -78,6 +83,11 @@ sudo apt install python-pip <<< y
 sudo pip install qrcode[pil] <<< y
 
 clear
+
+echo "_________________________________________________________"
+echo ""
+echo ":: Installing Partyman staking utility.."
+echo ""
 
 cd ~ && git clone https://github.com/dasource/partyman
 
@@ -128,6 +138,11 @@ cd && cd partyman
 done
 
 cd && cd partyman
+
+echo "_________________________________________________________"
+echo ""
+echo ":: Updating Partyman to latest version.."
+echo ""
 
 git pull
 
