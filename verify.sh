@@ -31,13 +31,13 @@ echo ""
 checknodekey=$(echo $nodekey | wc -c)
 if [[ "$checknodekey" -eq 113 ]] ;
 then
-qr $nodekey
+qr $nodekey 2>/dev/null
 fi
 
 checknodekeycs=$(echo $nodekeycs | wc -c)
 if [[ "$checknodekeycs" -eq 113 ]] ;
 then
-qr $nodekeycs
+qr $nodekeycs 2>/dev/null
 fi
 
 echo -e "${yel}$contract2${neutre}"
