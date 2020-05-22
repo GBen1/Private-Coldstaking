@@ -276,7 +276,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
-qr $extaddress 2>/dev/null
+python3-qr $extaddress 2>/dev/null
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
@@ -396,7 +396,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
-qr $extaddress 2>/dev/null
+python3-qr $extaddress 2>/dev/null
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
@@ -516,7 +516,7 @@ echo "" >> contractprivatecs.txt
 echo -e "${gr}$extaddress ${neutre}"
 echo "$extaddress" >> contractprivatecs.txt
 echo ""
-qr $extaddress 2>/dev/null
+python3-qr $extaddress 2>/dev/null
 echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
