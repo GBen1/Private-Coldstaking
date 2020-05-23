@@ -13,6 +13,7 @@
 ## MARKETPLACE
 
 - [PRESENTATION](https://particl.io/marketplace/)
+- [TUTORIAL](https://medium.com/@PART_BEN/11839ea30e09)
 - [WEB EXPLORER](https://www.demarkets.io/particl/explorer)
 - [STATS](https://www.demarkets.io/stats)
 
