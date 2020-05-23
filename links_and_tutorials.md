@@ -7,10 +7,8 @@
 - [NEWS](https://Particl.news)
 - [ROADMAP](https://Particl.io/roadmap/)
 - [STATUS REPORT](https://Particl.io/status-report/)
-
 - [WIKI](https://particl.wiki/)
 - [GITHUB](https://github.com/particl)
-
 - [MARKETPLACE WEB EXPLORER](https://www.demarkets.io/particl/explorer)
 
 ## TUTORIALS
