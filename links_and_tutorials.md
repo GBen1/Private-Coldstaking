@@ -8,13 +8,16 @@
 - [ROADMAP](https://Particl.io/roadmap/)
 - [STATUS REPORT](https://Particl.io/status-report/)
 - [WIKI](https://particl.wiki/)
-- [GITHUB](https://github.com/particl)
-- [MARKETPLACE WEB EXPLORER](https://www.demarkets.io/particl/explorer)
 
 ## TUTORIALS
 
 - [MARKETPLACE](https://medium.com/@PART_BEN/11839ea30e09)
 - [COLDSTAKING](https://medium.com/@PART_BEN/f1b48ff3de9a)
+
+## MARKETPLACE
+
+- [PRESENTATION](https://particl.io/marketplace/)
+- [MARKETPLACE WEB EXPLORER](https://www.demarkets.io/particl/explorer)
 
 ## EXCHANGES
 
@@ -27,6 +30,7 @@
 ## SOCIAL MEDIAS
 
 - [YOUTUBE](https://www.youtube.com/channel/UCnuttPuAY6AOenTz2GGMnbg)
+- [GITHUB](https://github.com/particl)
 - [TWITTER](https://twitter.com/ParticlProject)
 - [DISCORD](https://discord.me/particl)
 - [TELEGRAM](https://t.me/particlproject)
