@@ -36,7 +36,7 @@ This script allows you to anonymize automatically your coldstaking rewards on yo
 
 ## LINKS AND TUTORIALS
 
-`cat links_and_tutorials.md`
+`cat LINKS.md`
 
 ## DEBUG
 
