@@ -2,9 +2,9 @@
 
 ## USEFUL LINKS 
 
-- [WEBSITE](Particl.io)
-- [DOWNLOADS](Particl.io/downloads)
-- [NEWS](Particl.news)
+- [WEBSITE](https://particl.io)
+- [DOWNLOADS](https://particl.io/downloads)
+- [NEWS](https://Particl.news)
 - [WIKI](https://particl.wiki/)
 - [GITHUB](https://github.com/particl)
 - [MARKETPLACE WEB EXPLORER](https://www.demarkets.io/particl/explorer)
