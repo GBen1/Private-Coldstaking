@@ -1,17 +1,26 @@
 # LINKS AND TUTORIALS
 
-## LINKS 
+## USEFUL LINKS 
 
 - [WEBSITE](Particl.io)
 - [DOWNLOADS](Particl.io/downloads)
 - [NEWS](Particl.news)
 - [WIKI](https://particl.wiki/)
+- [GITHUB](https://github.com/particl)
 - [MARKETPLACE WEB EXPLORER](https://www.demarkets.io/particl/explorer)
 
 ## TUTORIALS
 
 - [MARKETPLACE](https://medium.com/@PART_BEN/11839ea30e09)
 - [COLDSTAKING](https://medium.com/@PART_BEN/f1b48ff3de9a)
+
+## EXCHANGES
+
+- [BITTREX](https://global.bittrex.com/Market/Index?MarketName=BTC-PART)
+- [SIMPLESWAP](https://simpleswap.io/)
+- [UPBIT](https://upbit.com/exchange?code=CRIX.UPBIT.BTC-PART)
+- [LITEBIT](https://www.litebit.eu/en/buy/particl)
+- [CHANGELLY](https://changelly.com/)
 
 ## SOCIAL MEDIAS
 
