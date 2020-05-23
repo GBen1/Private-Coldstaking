@@ -1,4 +1,4 @@
-# PRIVATE COLDSTAKING V1.0
+# PRIVATE COLDSTAKING 
 
 This script allows you to anonymize automatically your coldstaking rewards on your node and to redirect them automatically to the balance of your choice to your wallet. Receive your rewards in any of the three PART coin privacy states:
 
