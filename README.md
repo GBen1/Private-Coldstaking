@@ -28,11 +28,15 @@ This script allows you to anonymize automatically your coldstaking rewards on yo
 
 ## UPDATE YOUR NODE & GET NODE INFOS
 
-`bash update.sh`
+`bash update.sh` OR `bash watch_update.sh`
 
 ## VERIFY ACTIVE SCRIPTS & COLDSTAKING BALANCE
 
 `bash verify.sh`
+
+## TUTORIALS
+
+`cat Tutorials.txt`
 
 ## DEBUG
 
