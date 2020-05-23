@@ -34,9 +34,9 @@ This script allows you to anonymize automatically your coldstaking rewards on yo
 
 `bash verify.sh`
 
-## TUTORIALS
+## LINKS AND TUTORIALS
 
-`cat tutorials.txt`
+`cat links_and_tutorials.md`
 
 ## DEBUG
 
