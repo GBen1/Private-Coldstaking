@@ -36,7 +36,7 @@
 
 ## POOLS
 
-- [Particl.Page Pool](https://pool.particl.page)
+- [Particl.Page Pool](https://pool.particl.page) [Tutorial](https://particl.page/howto/)
 - [CoinRollin](https://coinroll.in)
 - [Crymel's Pool](https://particl.crymel.icu)
 - [Tecnovert's Pool ](http://66.172.10.231:903)
