@@ -257,8 +257,8 @@ clear
 clear
 clear
 clear
-echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0 ${neutre}"
-echo "PARTICL PRIVATE COLDSTAKING V1.0" > contractprivatecs.txt
+echo -e "${gr}PARTICL PRIVATE COLDSTAKING  ${neutre}"
+echo "PARTICL PRIVATE COLDSTAKING " > contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
@@ -377,8 +377,8 @@ clear
 clear
 clear
 clear
-echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0${neutre}"
-echo "PARTICL PRIVATE COLDSTAKING V1.0" > contractprivatecs.txt
+echo -e "${gr}PARTICL PRIVATE COLDSTAKING ${neutre}"
+echo "PARTICL PRIVATE COLDSTAKING " > contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
@@ -497,8 +497,8 @@ clear
 clear
 clear
 clear
-echo -e "${gr}PARTICL PRIVATE COLDSTAKING V1.0 ${neutre}"
-echo "PARTICL PRIVATE COLDSTAKING V1.0" > contractprivatecs.txt
+echo -e "${gr}PARTICL PRIVATE COLDSTAKING ${neutre}"
+echo "PARTICL PRIVATE COLDSTAKING " > contractprivatecs.txt
 echo ""
 echo ""
 echo "" >> contractprivatecs.txt
@@ -631,7 +631,7 @@ else
 echo ""
 read -p "$(echo -e ${gr}Press [Enter] key to continue...${neutre})"
 clear
-echo -e "\033[40m\033[1mPRIVATE COLDSTAKING V1.0\033[0m"
+echo -e "\033[40m\033[1mPRIVATE COLDSTAKING \033[0m"
 echo ""
 echo -e "\033[40m\033[1m$readme\033[0m"
 echo ""
