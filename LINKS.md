@@ -17,7 +17,7 @@
 ## TUTORIALS
 
 - [MARKETPLACE](https://medium.com/@PART_BEN/11839ea30e09)
-- [COLDSTAKING & LEDGER NANO S/X](https://medium.com/@PART_BEN/f1b48ff3de9a)
+- [COLDSTAKING (& LEDGER NANO S/X)](https://medium.com/@PART_BEN/f1b48ff3de9a)
 
 ## EXCHANGES
 
