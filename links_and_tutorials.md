@@ -9,15 +9,15 @@
 - [STATUS REPORT](https://Particl.io/status-report/)
 - [WIKI](https://particl.wiki/)
 
+## MARKETPLACE
+
+- [PRESENTATION](https://particl.io/marketplace/)
+- [WEB EXPLORER](https://www.demarkets.io/particl/explorer)
+
 ## TUTORIALS
 
 - [MARKETPLACE](https://medium.com/@PART_BEN/11839ea30e09)
 - [COLDSTAKING](https://medium.com/@PART_BEN/f1b48ff3de9a)
-
-## MARKETPLACE
-
-- [PRESENTATION](https://particl.io/marketplace/)
-- [MARKETPLACE WEB EXPLORER](https://www.demarkets.io/particl/explorer)
 
 ## EXCHANGES
 
