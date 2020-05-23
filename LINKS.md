@@ -20,8 +20,8 @@
 
 ## COLDSTAKING & HARDWARE WALLET
 
-- [COLDSTAKING TUTORIAL (& LEDGER NANO S/X) -ENG ](https://medium.com/@PART_BEN/f1b48ff3de9a)
-- [COLDSTAKING TUTORIEL (& LEDGER NANO S/X) -FR](https://medium.com/@PART_BEN/particl-coldstaking-pools-tutorial-538d3740205e)
+- [COLDSTAKING TUTORIAL (& LEDGER NANO S/X) - ENG](https://medium.com/@PART_BEN/f1b48ff3de9a)
+- [COLDSTAKING TUTORIEL (& LEDGER NANO S/X) - FR](https://medium.com/@PART_BEN/particl-coldstaking-pools-tutorial-538d3740205e)
 
 ## EXCHANGES
 
