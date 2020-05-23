@@ -8,11 +8,13 @@
 - [ROADMAP](https://Particl.io/roadmap/)
 - [STATUS REPORT](https://Particl.io/status-report/)
 - [WIKI](https://particl.wiki/)
+- [STATS](https://stats.particl.page/)
 
 ## MARKETPLACE
 
 - [PRESENTATION](https://particl.io/marketplace/)
 - [WEB EXPLORER](https://www.demarkets.io/particl/explorer)
+- [STATS](https://www.demarkets.io/stats)
 
 ## TUTORIALS
 
@@ -31,6 +33,13 @@
 
 - [INSIGHT](https://explorer.particl.io/)
 - [CRYPTOID](https://chainz.cryptoid.info/part/)
+
+## POOLS
+
+- [Particl.Page Pool](https://pool.particl.page)
+- [CoinRollin](https://coinroll.in)
+- [Crymel's Pool](https://particl.crymel.icu)
+- [Tecnovert's Pool ](http://66.172.10.231:903)
 
 ## SOCIAL MEDIAS
 
