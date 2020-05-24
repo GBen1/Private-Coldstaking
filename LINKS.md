@@ -16,7 +16,7 @@
 - [TUTORIAL (ENG)](https://medium.com/@PART_BEN/11839ea30e09)
 - [TUTORIEL (FR)](https://medium.com/@PART_BEN/tutoriel-comment-utiliser-la-marketplace-anonyme-et-sans-interm%C3%A9diaires-de-particl-d6a2cbc070e2)
 - [LISTING EXPLORER (WEB)](https://www.demarkets.io/particl/explorer)
-- [MADESCROW COUNTER (SALES)](https://github.com/GBen1/CountMADescrow/blob/master/README.md)
+- [MADESCROW(SALES) COUNTER](https://github.com/GBen1/CountMADescrow/blob/master/README.md)
 - [STATS](https://www.demarkets.io/stats)
 
 ## COLDSTAKING & HARDWARE WALLET
