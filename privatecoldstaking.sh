@@ -407,7 +407,7 @@ echo ""
 echo "" >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 echo -e "${yel}Every${neutre}${gr} $time2X${neutre}${yel}, the node is going to send you back${neutre}${gr} $amount2 parts${neutre}${yel} from the available anon balance of your node to the anon balance of your wallet.${neutre}" 
-echo "Every $time2X, the node is going to send you back $amount2 parts from the available anon balance of your node to the blind balance of your wallet." >> contractprivatecs.txt
+echo "Every $time2X, the node is going to send you back $amount2 parts from the available anon balance of your node to the anon balance of your wallet." >> contractprivatecs.txt
 echo "" >> contractprivatecs.txt
 echo ""
 
